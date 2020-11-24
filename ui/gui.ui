@@ -102,7 +102,7 @@
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -132,7 +132,7 @@
               <enum>QTabWidget::Rounded</enum>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>5</number>
              </property>
              <property name="usesScrollButtons">
               <bool>true</bool>
@@ -429,7 +429,7 @@
                  </property>
                  <layout class="QGridLayout" name="gridLayout_15">
                   <item row="0" column="1">
-                   <widget class="QLineEdit" name="lineEdit">
+                   <widget class="QLineEdit" name="cadhCUIT">
                     <property name="inputMask">
                      <string>99999999999</string>
                     </property>
@@ -445,21 +445,7 @@
                  </layout>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QPushButton" name="pushButton">
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QPushButton" name="pushButton_2">
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0" colspan="2">
+               <item row="1" column="0" colspan="2">
                 <widget class="QGroupBox" name="groupBox_2">
                  <property name="title">
                   <string>Info ADH</string>
@@ -473,7 +459,7 @@
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QComboBox" name="comboBox">
+                   <widget class="QComboBox" name="cadhMov">
                     <item>
                      <property name="text">
                       <string>Alta</string>
@@ -494,7 +480,7 @@
                    </widget>
                   </item>
                   <item row="1" column="1">
-                   <widget class="QLineEdit" name="lineEdit_2"/>
+                   <widget class="QLineEdit" name="cadhApellido"/>
                   </item>
                   <item row="2" column="0">
                    <widget class="QLabel" name="label_14">
@@ -504,7 +490,7 @@
                    </widget>
                   </item>
                   <item row="2" column="1">
-                   <widget class="QLineEdit" name="lineEdit_3"/>
+                   <widget class="QLineEdit" name="cadhNombre"/>
                   </item>
                   <item row="3" column="0">
                    <widget class="QLabel" name="label_16">
@@ -514,7 +500,7 @@
                    </widget>
                   </item>
                   <item row="3" column="1">
-                   <widget class="QLineEdit" name="lineEdit_4">
+                   <widget class="QLineEdit" name="cadhDNI">
                     <property name="inputMask">
                      <string>99999999</string>
                     </property>
@@ -528,7 +514,7 @@
                    </widget>
                   </item>
                   <item row="4" column="1">
-                   <widget class="QComboBox" name="comboBox_2">
+                   <widget class="QComboBox" name="cadhParentezco">
                     <item>
                      <property name="text">
                       <string>Hijo</string>
@@ -544,17 +530,10 @@
                  </layout>
                 </widget>
                </item>
-               <item row="3" column="0">
-                <widget class="QPushButton" name="pushButton_3">
+               <item row="2" column="1">
+                <widget class="QPushButton" name="cadhBoton">
                  <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QPushButton" name="pushButton_4">
-                 <property name="text">
-                  <string>PushButton</string>
+                  <string>Cargar ADH</string>
                  </property>
                 </widget>
                </item>
@@ -784,5 +763,22 @@ p, li { white-space: pre-wrap; }
   <tabstop>reevUndo</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>loginPwBox</sender>
+   <signal>returnPressed()</signal>
+   <receiver>loginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>68</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>147</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -10,7 +10,8 @@ from PyQt5 import QtWidgets, QtGui
 import pyodbc
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
-from procs import login,error9,reevaluar,reenviarP0,forzarBaja
+from procs.memes import redlestips
+from procs import login,error9,reevaluar,reenviarP0,forzarBaja,forzarP8,cargarADH
 
 
 if __name__ == "__main__":
@@ -57,22 +58,17 @@ if __name__ == "__main__":
         "mssql+pyodbc:///?odbc_connect={}".format(urlserver))
     version = '1.10102020'
 
-    # ui.quoteLabel.setText(random.choice(redlestips))
+    ui.quoteLabel.setText(random.choice(redlestips))
     ui.loginButton.clicked.connect(lambda: login.go(engine,ui,version,MainWindow))
     ui.E9Boton.clicked.connect(lambda: error9.go(engine,ui))
-    # ui.menuButtonCU.clicked.connect(ChangeUser)
     ui.reevBoton.clicked.connect(lambda: reevaluar.go(engine,ui))
     ui.reevUndo.clicked.connect(lambda: reevaluar.undo(engine,ui))
     ui.rp0Boton.clicked.connect(lambda: reenviarP0.go(engine,ui))
     ui.fbajaBoton.clicked.connect(lambda: forzarBaja.go(engine,ui))
-    # ui.ansesButton.clicked.connect(GetEstadoANSES)
-    # ui.paquetesButton.clicked.connect(GetPaquetes)
-    # ui.asigexpefButtonCE.clicked.connect(UploadExcel)
-    # ui.redlesButtonCE.clicked.connect(GetEstadoREDLES)
-    # ui.redlesANSESButtonCE.clicked.connect(GetEstadoANSES2)
-    # ui.redlesAnexoButton.clicked.connect(GetAnexos)
-    # ui.redlesCoopMatriculaButton.clicked.connect(GetCoopesPorMatricula)
-    # ui.adhButton.clicked.connect(SearchADH)
+    ui.fp8Boton.clicked.connect(lambda: forzarP8.go(engine,ui))
+    ui.cadhBoton.clicked.connect(lambda: cargarADH.go(engine,ui))
+
+    
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
     sys.exit(app.exec_())
