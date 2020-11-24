@@ -25,8 +25,8 @@ def go(engine,ui):
     if dni in ['','0'] or len(dni)<9 : return logB(ui,"CargarADH",f"Campo DNI son 8 digitos.",3)
 
     try:
-        with engine.connect() as conn, conn.begin():
-            conn.execute(f"""EXEC [dbo].[proc_P14_03_ADHReclamos]
+        with engine.begin() as connection:
+            connection.execute(f"""EXEC [dbo].[proc_P14_03_ADHReclamos]
                     @CUITTitular = '{cuit}',
                     @Movimiento_A_B ='{mov}',
                     @Apellido_y_nombre = '{apellido} {nombre}',
@@ -36,6 +36,7 @@ def go(engine,ui):
                     @Duplicado_1Sí_0No_opcional = NULL,
                     @Operador_opcional = NULL,
                     @Ticket_opcional = 0""")
+        log(engine, ui, 'Carga ADH',dni)
         return logB(ui,"CargarADH",f"Adherente cargado.",1)
     except Exception as e:
-        return logB(ui,"CargarADH",f"Error cargando el adherente {str(e)}",3)
+        return logB(ui,"CargarADH",f"Error cargando el adherente: {str(e)}",3)

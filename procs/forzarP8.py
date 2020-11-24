@@ -14,8 +14,8 @@ def go(engine, ui):
     if form in ['','0'] : return logB(ui,"Forzar P8","El campo formulario no peude estar vacio.",3)
 
     try:
-        with engine.connect() as conn, conn.begin():
-            conn.execute(
+        with engine.begin() as connection:
+            connection.execute(
                 f"""
                     declare @lote int
                     set @lote = (select max(lote) from [{tipo}s_Paquete_8] where tmov='B')

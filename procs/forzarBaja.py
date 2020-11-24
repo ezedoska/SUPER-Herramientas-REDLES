@@ -22,8 +22,8 @@ def go(engine,ui):
 
         if check.empty:
             try:
-                with engine.connect() as conn, conn.begin():
-                    conn.execute(
+                with engine.begin() as connection:
+                    connection.execute(
                         f"""INSERT INTO [adm_efectores].[dbo].[bajas{tipoDict[tipo]}]
                                     ([form_{tipo}]
                                     ,[denegatoria]

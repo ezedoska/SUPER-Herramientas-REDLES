@@ -11,7 +11,7 @@ import pyodbc
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
-from procs import login,error9,reevaluar,reenviarP0,forzarBaja,forzarP8,cargarADH
+from procs import login,error9,reevaluar,reenviarP0,forzarBaja,forzarP8,cargarADH,asigReso
 
 
 if __name__ == "__main__":
@@ -67,6 +67,7 @@ if __name__ == "__main__":
     ui.fbajaBoton.clicked.connect(lambda: forzarBaja.go(engine,ui))
     ui.fp8Boton.clicked.connect(lambda: forzarP8.go(engine,ui))
     ui.cadhBoton.clicked.connect(lambda: cargarADH.go(engine,ui))
+    ui.asigReBoton.clicked.connect(lambda: asigReso.go(engine,ui))
 
     
     ui.menuButtonSalir.clicked.connect(MainWindow.close)

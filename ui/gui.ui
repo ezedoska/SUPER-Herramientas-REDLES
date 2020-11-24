@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>794</width>
-    <height>503</height>
+    <width>814</width>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -96,13 +96,72 @@
        <string>[Procesos]</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="logBox">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>600</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0">
+           <widget class="QTextBrowser" name="log">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="autoFormatting">
+             <set>QTextEdit::AutoAll</set>
+            </property>
+            <property name="documentTitle">
+             <string/>
+            </property>
+            <property name="lineWrapMode">
+             <enum>QTextEdit::WidgetWidth</enum>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;[LOG]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
         <widget class="QTabWidget" name="tabMain">
          <property name="tabPosition">
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -112,7 +171,7 @@
          </property>
          <widget class="QWidget" name="tabInicio">
           <attribute name="title">
-           <string>Inicio</string>
+           <string/>
           </attribute>
          </widget>
          <widget class="QWidget" name="TabF">
@@ -135,7 +194,7 @@
               <number>5</number>
              </property>
              <property name="usesScrollButtons">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
              <widget class="QWidget" name="tabE9">
               <attribute name="title">
@@ -193,7 +252,7 @@
              </widget>
              <widget class="QWidget" name="tabRv">
               <attribute name="title">
-               <string>Reevaluacion</string>
+               <string>Reevaluar</string>
               </attribute>
               <layout class="QFormLayout" name="formLayout_2">
                <item row="0" column="0">
@@ -254,7 +313,7 @@
              </widget>
              <widget class="QWidget" name="tabRP0">
               <attribute name="title">
-               <string>Reenvio P0</string>
+               <string>Reenviar P0</string>
               </attribute>
               <layout class="QFormLayout" name="formLayout_3">
                <item row="0" column="0">
@@ -480,7 +539,11 @@
                    </widget>
                   </item>
                   <item row="1" column="1">
-                   <widget class="QLineEdit" name="cadhApellido"/>
+                   <widget class="QLineEdit" name="cadhApellido">
+                    <property name="maxLength">
+                     <number>50</number>
+                    </property>
+                   </widget>
                   </item>
                   <item row="2" column="0">
                    <widget class="QLabel" name="label_14">
@@ -490,7 +553,11 @@
                    </widget>
                   </item>
                   <item row="2" column="1">
-                   <widget class="QLineEdit" name="cadhNombre"/>
+                   <widget class="QLineEdit" name="cadhNombre">
+                    <property name="maxLength">
+                     <number>50</number>
+                    </property>
+                   </widget>
                   </item>
                   <item row="3" column="0">
                    <widget class="QLabel" name="label_16">
@@ -548,28 +615,455 @@
            <string>Asignaciones y Cruces</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_6">
-           <item row="0" column="0">
+           <item row="0" column="1">
             <widget class="QTabWidget" name="tabAC">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <property name="usesScrollButtons">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <widget class="QWidget" name="tabExp">
               <attribute name="title">
                <string>Asignar Expedientes</string>
               </attribute>
+              <layout class="QFormLayout" name="formLayout_8">
+               <item row="0" column="0" colspan="2">
+                <widget class="QPushButton" name="asigExpExcel">
+                 <property name="text">
+                  <string>Cargar excel con asignaciones</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="asigexpefLabelETA">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Tipo de asignación</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="asigExpTipo">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>01P-Alta - Personas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>02I-Alta - Integrantes</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>03C-Alta - Asociados</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>04P-Reinscripcion - PF</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>05I-Reinscripcion - IP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>06P-Denegatorias - PF</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>07I-Denegatorias - IP</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>08P-Denegatorias - AC</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>09P-Renuncias - IP-PF-AC</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>10P-Reevaluados - PF</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QTableWidget" name="asigExpTabla"/>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QPushButton" name="asigExpBoton">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Asignar</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" colspan="2">
+                <widget class="QPushButton" name="pushButton">
+                 <property name="text">
+                  <string>Copiar</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
              <widget class="QWidget" name="tabReso">
               <attribute name="title">
                <string>Asignar Resolucion</string>
               </attribute>
+              <layout class="QFormLayout" name="formLayout_7">
+               <item row="0" column="0">
+                <widget class="QLabel" name="asigresoLabelR">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Resolucion</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>asigReReso</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="asigReReso">
+                 <property name="inputMask">
+                  <string>9999999999</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>El numero sin AÑO</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="asigresoLabelE">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Expediente</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>asigReExp</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="asigReExp">
+                 <property name="inputMask">
+                  <string>9999999999999</string>
+                 </property>
+                 <property name="maxLength">
+                  <number>13</number>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="asigresoLabelF">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Fecha de la Resolucion [M/D/A]</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>asigReFecha</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QDateEdit" name="asigReFecha">
+                 <property name="layoutDirection">
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="wrapping">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="showGroupSeparator" stdset="0">
+                  <bool>false</bool>
+                 </property>
+                 <property name="dateTime">
+                  <datetime>
+                   <hour>0</hour>
+                   <minute>0</minute>
+                   <second>0</second>
+                   <year>2020</year>
+                   <month>2</month>
+                   <day>20</day>
+                  </datetime>
+                 </property>
+                 <property name="minimumDate">
+                  <date>
+                   <year>2010</year>
+                   <month>9</month>
+                   <day>14</day>
+                  </date>
+                 </property>
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="asigresoLabelG">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Elija gestión</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>asigReGestion</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="asigReGestion">
+                 <item>
+                  <property name="text">
+                   <string>ALTA</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>RENUNCIA</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>DENEGATORIA</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>BAJA DE OFICIO</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="asigresoLabelDR">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Elija dependencia de la Resolucion</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>asigReDependenciaR</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="asigReDependenciaR">
+                 <item>
+                  <property name="text">
+                   <string>SES#MDS</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>SES#MSYDS</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>SECOYCC#MDS</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="asigresoLabelDE">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Elija dependencia del Expediente</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>asigReDependenciaE</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QComboBox" name="asigReDependenciaE">
+                 <item>
+                  <property name="text">
+                   <string>DRNEDLES#MSYDS</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>DRNEDLES#MDS</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="6" column="0" colspan="2">
+                <widget class="QPushButton" name="asigReBoton">
+                 <property name="text">
+                  <string>Asignar Resolución</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
              <widget class="QWidget" name="tabCruce">
               <attribute name="title">
                <string>Cruces</string>
               </attribute>
+              <layout class="QGridLayout" name="gridLayout_8">
+               <item row="1" column="1">
+                <widget class="QGroupBox" name="redlesCoopMatriculaGB">
+                 <property name="title">
+                  <string>[Cruce COOP por MATRICULA]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_27">
+                  <item row="0" column="0" colspan="2">
+                   <widget class="QPushButton" name="redlesCoopMatriculaButton">
+                    <property name="text">
+                     <string>Cargar excel y generar estado</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="redlesEstadoGB">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="title">
+                  <string>[Cruce estado REDLES por DNI]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="redlesButtonCE">
+                    <property name="text">
+                     <string>Cargar excel y generar estado</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="redlesANSEGB">
+                 <property name="title">
+                  <string>[Cruce estado ANSES por Formulario]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_16">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="redlesANSESButtonCE">
+                    <property name="text">
+                     <string>Cargar excel y generar estado</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="redlesAnexosGB">
+                 <property name="title">
+                  <string>[Cruce Exp ANEXOS]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_11">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="redlesAnexoLabel">
+                    <property name="text">
+                     <string>Expediente</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="redlesAnexoBox">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="inputMask">
+                     <string>9999999999999</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="2">
+                   <widget class="QPushButton" name="redlesAnexoButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Generar ANEXO</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </widget>
            </item>
@@ -580,60 +1074,173 @@
            <string>Paquetes</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0">
+           <item row="1" column="0">
             <widget class="QTabWidget" name="tabPaq">
              <property name="currentIndex">
               <number>0</number>
              </property>
              <widget class="QWidget" name="tab">
               <attribute name="title">
-               <string>Paq. 00/02</string>
+               <string>Proceso Alta</string>
               </attribute>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <item row="3" column="2">
+                <widget class="QToolBox" name="toolBox">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="page">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>424</width>
+                    <height>64</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Paquete 0 [F1252]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_13">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_2">
+                     <property name="text">
+                      <string>Paquete 0</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>96</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Paquete 2 [SINTYS]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_22">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_4">
+                     <property name="text">
+                      <string>Paquete 2</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_3">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>96</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Paquete 1 [ Vuelta F1252]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_21">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_5">
+                     <property name="text">
+                      <string>Paquete 1</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_4">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>96</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Paquete 3 [Vuelta SINTYS]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_20">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_6">
+                     <property name="text">
+                      <string>Paquete 3</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_5">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>96</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Paquete 4 [F1253]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_19">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_7">
+                     <property name="text">
+                      <string>Paquete 4</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_6">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>96</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Paquete 5 [F1253]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_17">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_8">
+                     <property name="text">
+                      <string>Paquete 5</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QProgressBar" name="progressBar">
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
              <widget class="QWidget" name="tab_2">
               <attribute name="title">
-               <string>Paq. 01/03</string>
+               <string>Bajas y Modificaciones</string>
               </attribute>
              </widget>
             </widget>
            </item>
           </layout>
          </widget>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QGroupBox" name="logBox">
-         <property name="title">
-          <string/>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_7">
-          <item row="0" column="0">
-           <widget class="QTextBrowser" name="log">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="autoFormatting">
-             <set>QTextEdit::AutoAll</set>
-            </property>
-            <property name="documentTitle">
-             <string/>
-            </property>
-            <property name="lineWrapMode">
-             <enum>QTextEdit::WidgetWidth</enum>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;[LOG]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
       </layout>
@@ -745,12 +1352,9 @@ p, li { white-space: pre-wrap; }
   <tabstop>loginUsrBox</tabstop>
   <tabstop>loginPwBox</tabstop>
   <tabstop>loginButton</tabstop>
-  <tabstop>tabMain</tabstop>
   <tabstop>menuButtonSalir</tabstop>
   <tabstop>menuButtonCU</tabstop>
   <tabstop>tabForm</tabstop>
-  <tabstop>tabPaq</tabstop>
-  <tabstop>tabAC</tabstop>
   <tabstop>E9Form</tabstop>
   <tabstop>E9Tipo</tabstop>
   <tabstop>E9Boton</tabstop>
