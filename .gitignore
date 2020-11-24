@@ -1,0 +1,13 @@
+*.pyc
+*.htm
+*.zip
+*.txt
+*.zip
+*.pgp
+*.spec
+venv/
+.vscode/settings.json
+*.pyc
+dist/
+build/
+__pycache__/

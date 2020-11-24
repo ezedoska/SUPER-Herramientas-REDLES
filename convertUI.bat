@@ -1,0 +1,1 @@
+powershell -Command "& {pyuic5 -x ui/gui.ui -o ui/gui.py}"
