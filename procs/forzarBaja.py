@@ -63,4 +63,4 @@ def Forzar_Baja(ui):
         else:
             return logB(ui, f"[{form}] Ya tiene una baja.", 2)
     except Exception as e:
-        return logB(ui, f"[{form}] Error chequeando estado.", 3)
+        return logB(ui, f"[{form}] Error chequeando estado: {str(e)}", 3)

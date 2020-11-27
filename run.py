@@ -19,6 +19,7 @@ from procs import (
     asigReso,
     asigEf,
     logger,
+    cruces,
 )
 
 
@@ -52,7 +53,7 @@ if __name__ == "__main__":
     )
 
     MainWindow.show()
-    ui.mainGroup.setEnabled(False)
+    ui.mainGroup.setEnabled(True)
     MainWindow.setWindowIcon(QtGui.QIcon("icon.ico"))
     ui.Main.setPixmap(QtGui.QPixmap("Main.png"))
     pixmap = QtGui.QPixmap("Main.png")
@@ -76,6 +77,7 @@ if __name__ == "__main__":
     ui.asigEfCopiar.clicked.connect(lambda: logger.copiar_tabla(ui.asigEfTabla))
     ui.asigEfExcel.clicked.connect(lambda: asigEf.Subir_Excel_Asignacion(ui))
     ui.asigEfBoton.clicked.connect(lambda: asigEf.Asignado_Efectores(ui))
+    ui.cruceEstadoBoton.clicked.connect(lambda: cruces.Cruce_Estado_DNI(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
