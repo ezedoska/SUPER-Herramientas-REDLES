@@ -52,8 +52,13 @@ if __name__ == "__main__":
     )
 
     MainWindow.show()
-    ui.tabMain.setEnabled(True)
-    # MainWindow.setWindowIcon(QtGui.QIcon('icon.ico'))
+    ui.mainGroup.setEnabled(False)
+    MainWindow.setWindowIcon(QtGui.QIcon("icon.ico"))
+    ui.Main.setPixmap(QtGui.QPixmap("Main.png"))
+    pixmap = QtGui.QPixmap("Main.png")
+    pixmap2 = pixmap.scaledToWidth(16)
+    pixmap3 = pixmap.scaledToHeight(16)
+
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v. ]")
 
     version = "1.10102020"

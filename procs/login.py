@@ -47,7 +47,7 @@ def Login(ui, version, MainWindow):
                                     WHERE ndocumento={usr}""",
             con=engine,
         )
-        ui.tabMain.setEnabled(True)
+        ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
         log(ui)
         return MainWindow.setWindowTitle(
