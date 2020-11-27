@@ -1,53 +1,67 @@
 import pandas as pd
-from procs.logger import log,logB
+from procs.logger import log, logB
+from procs.db import engine
 
-def go(engine,ui):
+
+def Reevaluar(ui):
+    userdni = ui.loginUsrBox.text()
+    if userdni == "":
+        userdni = 32737943
     form = ui.reevForm.text()
     tipo = ui.reevTipo.currentText()
-    userdni = ui.loginUsrBox.text()
-    tipoDict = {'Persona':1,'Asociado':3,'Integrante':5}
-    if form in ['','0'] : return logB(ui,'Reevaluar','El campo formulario no puede estar vacio.',3)
+    tipoDict = {"Persona": 1, "Asociado": 3, "Integrante": 5}
+    if form in ["", "0"]:
+        return logB(ui, "El campo formulario no puede estar vacio.", 3)
     try:
         check = pd.read_sql_query(
             f"""SELECT evaluado 
                 FROM [adm_efectores].[dbo].[PadronEfectores] 
-                WHERE nroformulario={form} and tipoef={tipoDict[tipo]}"""
-            ,con=engine
+                WHERE nroformulario={form} and tipoef={tipoDict[tipo]}""",
+            con=engine,
         )
         if check.empty:
-            return logB(ui,'Reevaluar',f'[{form}] Formulario inexistente.',2)
-        elif check['evaluado'].iloc[0] == 2:
+            return logB(ui, f"[{form}] Formulario inexistente.", 2)
+        elif check["evaluado"].iloc[0] == 2:
             try:
                 with engine.begin() as connection:
                     connection.execute(
-                    f"""exec [dbo].[ReevaluarEXE] 
+                        f"""exec [dbo].[ReevaluarEXE] 
                         @tipo={tipoDict[tipo]},@formulario={form},@operador={userdni}"""
-                )
+                    )
             except Exception as e:
-                return logB(ui,'Reevaluar',f'[{form}] Hubo un error al reevaluar: {str(e)}',3)
-            log(engine,ui,'Reevaluacion', form)
-            return logB(ui,'Reevaluar',f'[{form}] Fue evaluado a positivo.',1)
+                return logB(ui, f"[{form}] Hubo un error al reevaluar: {str(e)}", 3)
+            log(ui, form)
+            return logB(ui, f"[{form}] Fue evaluado a positivo.", 1)
         else:
-            return logB(ui,'Reevaluar',f'[{form}] No tiene evaluacion negativa.',2)
+            return logB(ui, f"[{form}] No tiene evaluacion negativa.", 2)
     except Exception as e:
-        return logB(ui,'Reevaluar',f'[{form}] Hubo un error chequeando estado: {str(e)}',3)
+        return logB(ui, f"[{form}] Hubo un error chequeando estado: {str(e)}", 3)
 
-def undo(engine,ui):
+
+def Deshacer_Reevaluar(ui):
+    userdni = ui.loginUsrBox.text()
+    if userdni == "":
+        userdni = 32737943
     form = ui.reevForm.text()
     tipo = ui.reevTipo.currentText()
-    tipoDict = {'Persona':1,'Asociado':3,'Integrante':5}
+    tipoDict = {"Persona": 1, "Asociado": 3, "Integrante": 5}
     userdni = ui.loginUsrBox.text()
-    if form in ['','0'] : return logB(ui,'Deshacer Reevaluar','El campo formulario no peude estar vacio.',3)
+    if form in ["", "0"]:
+        return logB(ui, "El campo formulario no peude estar vacio.", 3)
 
     try:
         check = pd.read_sql_query(
             f"""SELECT nroredles 
                 FROM [adm_efectores].[dbo].[Reevaluados] 
                 WHERE nroredles={form} and tiporedles={tipoDict[tipo]}""",
-            con=engine
+            con=engine,
         )
         if check.empty:
-            return logB(ui,'Deshacer Reevaluar',f'[{form}] El formulario ingresado no tiene evaluacion a revertir.',2)
+            return logB(
+                ui,
+                f"[{form}] El formulario ingresado no tiene evaluacion a revertir.",
+                2,
+            )
         else:
             try:
                 with engine.begin() as connection:
@@ -56,8 +70,8 @@ def undo(engine,ui):
                         @tipo={tipoDict[tipo]},@formulario={form},@operador={userdni}"""
                     )
             except Exception as e:
-                return logB(ui,'Reevaluar',f'[{form}] Hubo un error reevaluando: {str(e)}',3)
-            log(engine,ui,'undoReevaluacion', form)
-            return logB(ui,'Deshacer Reevaluar',f'[{form}] Se revirtio la evaluacion.',1)
+                return logB(ui, f"[{form}] Hubo un error reevaluando: {str(e)}", 3)
+            log(ui, form)
+            return logB(ui, f"[{form}] Se revirtio la evaluacion.", 1)
     except Exception as e:
-        return logB(ui,'Deshacer Reevaluar',f'[{form}] Hubo un error chequeando estado: {str(e)}',3)
+        return logB(ui, f"[{form}] Hubo un error chequeando estado: {str(e)}", 3)

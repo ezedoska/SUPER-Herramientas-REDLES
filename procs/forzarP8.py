@@ -1,17 +1,20 @@
 import pandas as pd
-from procs.logger import log,logB
+from procs.logger import log, logB
+from procs.db import engine
 
-def go(engine, ui):
+
+def Forzar_P8(ui):
     """
     [Forzar_P8]
-    
+
     Arguments:
         engine {[sqlalchemy]} -- [engine creado por sqlalchemy]
         f {[figlet]} -- [toma el tipo de letra para marquee]
     """
     form = ui.fp8Form.text()
     tipo = ui.fp8Tipo.currentText()
-    if form in ['','0'] : return logB(ui,"Forzar P8","El campo formulario no peude estar vacio.",3)
+    if form in ["", "0"]:
+        return logB(ui, "El campo FORMULARIO no peude estar vacio.", 3)
 
     try:
         with engine.begin() as connection:
@@ -31,6 +34,6 @@ def go(engine, ui):
                         ,'B')
                 """
             )
-        return logB(ui,"Forzar P8","Se inserto el P8.",1)
+        return logB(ui, "Se inserto el P8.", 1)
     except Exception as e:
-        return logB(ui,"Forzar P8",f"Hubo un error: {str(e)}",3)
+        return logB(ui, f"Hubo un error: {str(e)}", 3)

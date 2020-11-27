@@ -2,21 +2,26 @@ import sys
 import os
 import datetime
 import random
-import urllib
 import pandas as pd
-from sqlalchemy import create_engine
 from dateutil import parser
 from PyQt5 import QtWidgets, QtGui
-import pyodbc
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
-from procs import login,error9,reevaluar,reenviarP0,forzarBaja,forzarP8,cargarADH,asigReso
+from procs import (
+    login,
+    error9,
+    reevaluar,
+    reenviarP0,
+    forzarBaja,
+    forzarP8,
+    cargarADH,
+    asigReso,
+)
 
 
 if __name__ == "__main__":
-    """[summary]
-    """
+    """[summary]"""
 
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle("fusion")
@@ -47,29 +52,21 @@ if __name__ == "__main__":
     MainWindow.show()
     ui.tabMain.setEnabled(True)
     # MainWindow.setWindowIcon(QtGui.QIcon('icon.ico'))
-    MainWindow.setWindowTitle(f'[ Herramientas REDLES 2 - v. ]')
-    server = (r"Driver={SQL Server};" + "Server=localhost,21433;" +
-                  f"Database=adm_efectores;UID=sqlemore;PWD=Eze2kftw!;")
-    # parseamos para que lo pueda leer bien sqlalchemy
-    urlserver = urllib.parse.quote_plus(server)
+    MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v. ]")
 
-    # creamos el motor de sqlengine dandole el parametro de urlserver
-    engine = create_engine(
-        "mssql+pyodbc:///?odbc_connect={}".format(urlserver))
-    version = '1.10102020'
+    version = "1.10102020"
 
     ui.quoteLabel.setText(random.choice(redlestips))
-    ui.loginButton.clicked.connect(lambda: login.go(engine,ui,version,MainWindow))
-    ui.E9Boton.clicked.connect(lambda: error9.go(engine,ui))
-    ui.reevBoton.clicked.connect(lambda: reevaluar.go(engine,ui))
-    ui.reevUndo.clicked.connect(lambda: reevaluar.undo(engine,ui))
-    ui.rp0Boton.clicked.connect(lambda: reenviarP0.go(engine,ui))
-    ui.fbajaBoton.clicked.connect(lambda: forzarBaja.go(engine,ui))
-    ui.fp8Boton.clicked.connect(lambda: forzarP8.go(engine,ui))
-    ui.cadhBoton.clicked.connect(lambda: cargarADH.go(engine,ui))
-    ui.asigReBoton.clicked.connect(lambda: asigReso.go(engine,ui))
+    ui.loginButton.clicked.connect(lambda: login.Login(ui, version, MainWindow))
+    ui.E9Boton.clicked.connect(lambda: error9.Error_9(ui))
+    ui.reevBoton.clicked.connect(lambda: reevaluar.Reevaluar(ui))
+    ui.reevUndo.clicked.connect(lambda: reevaluar.Deshacer_Reevaluar(ui))
+    ui.rp0Boton.clicked.connect(lambda: reenviarP0.Reenviar_P0(ui))
+    ui.fbajaBoton.clicked.connect(lambda: forzarBaja.Forzar_Baja(ui))
+    ui.fp8Boton.clicked.connect(lambda: forzarP8.Forzar_P8(ui))
+    ui.cadhBoton.clicked.connect(lambda: cargarADH.Cargar_ADH(ui))
+    ui.asigReBoton.clicked.connect(lambda: asigReso.Asignar_Resolucion(ui))
 
-    
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
     sys.exit(app.exec_())
