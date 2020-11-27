@@ -4,6 +4,40 @@ import inspect
 import types
 from typing import cast
 from procs.db import engine
+from PyQt5 import QtWidgets, QtGui
+import pandas as pd
+
+
+def copiar_tabla(table):
+    col_count = table.columnCount()
+    row_count = table.rowCount()
+    headers = [str(table.horizontalHeaderItem(i).text()) for i in range(col_count)]
+
+    # df indexing is slow, so use lists
+    df_list = []
+    for row in range(row_count):
+        df_list2 = []
+        for col in range(col_count):
+            table_item = table.item(row, col)
+            df_list2.append("" if table_item is None else str(table_item.text()))
+        df_list.append(df_list2)
+
+    df = pd.DataFrame(df_list, columns=headers)
+
+    return df.to_clipboard(sep="\t", index=False)
+
+
+def MostrarEnTabla(df, table):
+    headers = list(df)
+    table.setRowCount(df.shape[0])
+    table.setColumnCount(df.shape[1])
+    table.setHorizontalHeaderLabels(headers)
+
+    # getting data from df is computationally costly so convert it to array first
+    df_array = df.values
+    for row in range(df.shape[0]):
+        for col in range(df.shape[1]):
+            table.setItem(row, col, QtWidgets.QTableWidgetItem(str(df_array[row, col])))
 
 
 def log(ui, formusado=""):

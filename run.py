@@ -17,6 +17,8 @@ from procs import (
     forzarP8,
     cargarADH,
     asigReso,
+    asigEf,
+    logger,
 )
 
 
@@ -66,6 +68,9 @@ if __name__ == "__main__":
     ui.fp8Boton.clicked.connect(lambda: forzarP8.Forzar_P8(ui))
     ui.cadhBoton.clicked.connect(lambda: cargarADH.Cargar_ADH(ui))
     ui.asigReBoton.clicked.connect(lambda: asigReso.Asignar_Resolucion(ui))
+    ui.asigEfCopiar.clicked.connect(lambda: logger.copiar_tabla(ui.asigEfTabla))
+    ui.asigEfExcel.clicked.connect(lambda: asigEf.Subir_Excel_Asignacion(ui))
+    ui.asigEfBoton.clicked.connect(lambda: asigEf.Asignado_Efectores(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 

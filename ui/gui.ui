@@ -616,9 +616,9 @@ p, li { white-space: pre-wrap; }
           </attribute>
           <layout class="QGridLayout" name="gridLayout_6">
            <item row="0" column="1">
-            <widget class="QTabWidget" name="tabAC">
+            <widget class="QTabWidget" name="asigEf">
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <property name="usesScrollButtons">
               <bool>true</bool>
@@ -629,14 +629,14 @@ p, li { white-space: pre-wrap; }
               </attribute>
               <layout class="QFormLayout" name="formLayout_8">
                <item row="0" column="0" colspan="2">
-                <widget class="QPushButton" name="asigExpExcel">
+                <widget class="QPushButton" name="asigEfExcel">
                  <property name="text">
                   <string>Cargar excel con asignaciones</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="0">
-                <widget class="QLabel" name="asigexpefLabelETA">
+                <widget class="QLabel" name="asigEfLabel">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -649,7 +649,7 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QComboBox" name="asigExpTipo">
+                <widget class="QComboBox" name="asigEfTipo">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -712,10 +712,10 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="3" column="0" colspan="2">
-                <widget class="QTableWidget" name="asigExpTabla"/>
+                <widget class="QTableWidget" name="asigEfTabla"/>
                </item>
                <item row="2" column="0" colspan="2">
-                <widget class="QPushButton" name="asigExpBoton">
+                <widget class="QPushButton" name="asigEfBoton">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -725,7 +725,7 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="4" column="0" colspan="2">
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="asigEfCopiar">
                  <property name="text">
                   <string>Copiar</string>
                  </property>
@@ -967,100 +967,96 @@ p, li { white-space: pre-wrap; }
                <string>Cruces</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_8">
-               <item row="1" column="1">
-                <widget class="QGroupBox" name="redlesCoopMatriculaGB">
-                 <property name="title">
-                  <string>[Cruce COOP por MATRICULA]</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_27">
-                  <item row="0" column="0" colspan="2">
-                   <widget class="QPushButton" name="redlesCoopMatriculaButton">
-                    <property name="text">
-                     <string>Cargar excel y generar estado</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
                <item row="0" column="0">
-                <widget class="QGroupBox" name="redlesEstadoGB">
+                <widget class="QToolBox" name="cruces">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
-                 <property name="title">
-                  <string>[Cruce estado REDLES por DNI]</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_12">
-                  <item row="0" column="0">
-                   <widget class="QPushButton" name="redlesButtonCE">
-                    <property name="text">
-                     <string>Cargar excel y generar estado</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QGroupBox" name="redlesANSEGB">
-                 <property name="title">
-                  <string>[Cruce estado ANSES por Formulario]</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_16">
-                  <item row="0" column="0">
-                   <widget class="QPushButton" name="redlesANSESButtonCE">
-                    <property name="text">
-                     <string>Cargar excel y generar estado</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QGroupBox" name="redlesAnexosGB">
-                 <property name="title">
-                  <string>[Cruce Exp ANEXOS]</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_11">
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="redlesAnexoLabel">
-                    <property name="text">
-                     <string>Expediente</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QLineEdit" name="redlesAnexoBox">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="inputMask">
-                     <string>9999999999999</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0" colspan="2">
-                   <widget class="QPushButton" name="redlesAnexoButton">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Generar ANEXO</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <widget class="QWidget" name="redlesEstadoGBPage1" native="true">
+                  <attribute name="label">
+                   <string>[Cruce ESTADO por DNI]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_12">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="cruceEstadoBoton">
+                     <property name="text">
+                      <string>Cargar excel y generar estado</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_7">
+                  <attribute name="label">
+                   <string>[Cruce ANSES por formulario]</string>
+                  </attribute>
+                  <layout class="QFormLayout" name="formLayout_9">
+                   <item row="0" column="0" colspan="2">
+                    <widget class="QPushButton" name="cruceAnsesBoton">
+                     <property name="text">
+                      <string>Cargar excel y generar estado</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_8">
+                  <attribute name="label">
+                   <string>[Cruce COOP por Matricula]</string>
+                  </attribute>
+                  <layout class="QFormLayout" name="formLayout_10">
+                   <item row="0" column="0" colspan="2">
+                    <widget class="QPushButton" name="cruceMatriculaBoton">
+                     <property name="text">
+                      <string>Cargar excel y generar estado</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_9">
+                  <attribute name="label">
+                   <string>[Cruce ANEXO por Expediente]</string>
+                  </attribute>
+                  <layout class="QFormLayout" name="formLayout_11">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="redlesAnexoLabel">
+                     <property name="text">
+                      <string>Expediente</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLineEdit" name="redlesAnexoBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="inputMask">
+                      <string>9999999999999</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="2">
+                    <widget class="QPushButton" name="cruceAnexoBoton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Generar ANEXO</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                </item>
               </layout>
@@ -1087,15 +1083,15 @@ p, li { white-space: pre-wrap; }
                <item row="3" column="2">
                 <widget class="QToolBox" name="toolBox">
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>5</number>
                  </property>
                  <widget class="QWidget" name="page">
                   <property name="geometry">
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>96</width>
-                    <height>41</height>
+                    <width>424</width>
+                    <height>64</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1116,7 +1112,7 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>96</width>
+                    <width>93</width>
                     <height>41</height>
                    </rect>
                   </property>
@@ -1138,7 +1134,7 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>96</width>
+                    <width>93</width>
                     <height>41</height>
                    </rect>
                   </property>
@@ -1160,7 +1156,7 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>96</width>
+                    <width>93</width>
                     <height>41</height>
                    </rect>
                   </property>
@@ -1182,7 +1178,7 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>96</width>
+                    <width>93</width>
                     <height>41</height>
                    </rect>
                   </property>
@@ -1204,12 +1200,12 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>96</width>
-                    <height>41</height>
+                    <width>424</width>
+                    <height>64</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>Paquete 5 [F1253]</string>
+                   <string>Paquete 5 [Vuelta F1253]</string>
                   </attribute>
                   <layout class="QGridLayout" name="gridLayout_17">
                    <item row="0" column="0">
