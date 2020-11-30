@@ -58,7 +58,7 @@ def log(ui, formusado=""):
     return 0
 
 
-def logB(ui, mensaje, tipo=0, size=4):
+def logB(ui, mensaje, tipo=0, contitulo=1, size=4):
     if tipo == 1:
         icono = "✔"
     elif tipo == 2:
@@ -68,5 +68,6 @@ def logB(ui, mensaje, tipo=0, size=4):
     else:
         icono = ""
     procname = inspect.stack()[1][3]
-    ui.log.append(f"<h{size}>{icono} {procname}:</h{size}>  {mensaje}")
-    return 0
+    if contitulo == 1:
+        return ui.log.append(f"<h{size}>{icono} {procname}:</h{size}>  {mensaje}")
+    return ui.log.append(f"{icono} {mensaje}")

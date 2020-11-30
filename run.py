@@ -8,6 +8,7 @@ from PyQt5 import QtWidgets, QtGui
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
+from paquetes import paquete0, paquete1, paquete2, paquete3, paquete5
 from procs import (
     login,
     error9,
@@ -78,6 +79,16 @@ if __name__ == "__main__":
     ui.asigEfExcel.clicked.connect(lambda: asigEf.Subir_Excel_Asignacion(ui))
     ui.asigEfBoton.clicked.connect(lambda: asigEf.Asignado_Efectores(ui))
     ui.cruceEstadoBoton.clicked.connect(lambda: cruces.Cruce_Estado_DNI(ui))
+    ui.paquete0BotonS.clicked.connect(lambda: paquete0.Paquete_0_Proceso(ui))
+    ui.paquete0BotonP.clicked.connect(lambda: paquete0.Paquete_0_Salida(ui))
+    ui.paquete2BotonP.clicked.connect(lambda: paquete2.Paquete_2_Proceso(ui))
+    ui.paquete2BotonS.clicked.connect(lambda: paquete2.Paquete_2_Salida(ui))
+    ui.paquete1Boton.clicked.connect(lambda: paquete1.Paquete_1(ui))
+    ui.paquete3BotonS.clicked.connect(lambda: paquete3.Paquete_3_Subida(ui))
+    ui.paquete3BotonE.clicked.connect(lambda: paquete3.Paquete_3_Entrada(ui))
+    ui.paquete3BotonP.clicked.connect(lambda: paquete3.Paquete_3_Proceso(ui))
+    ui.paquete3BotonA.clicked.connect(lambda: paquete3.Paquete_3_Archivo(ui))
+    ui.paquete5Boton.clicked.connect(lambda: paquete5.Paquete_5(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
