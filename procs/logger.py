@@ -27,17 +27,32 @@ def copiar_tabla(table):
     return df.to_clipboard(sep="\t", index=False)
 
 
-def MostrarEnTabla(df, table):
+def MostrarEnTabla(df, table, orientacion=1):
     headers = list(df)
-    table.setRowCount(df.shape[0])
-    table.setColumnCount(df.shape[1])
-    table.setHorizontalHeaderLabels(headers)
-
+    if orientacion == 1:
+        table.setRowCount(df.shape[0])
+        table.setColumnCount(df.shape[1])
+        table.setHorizontalHeaderLabels(headers)
+        # getting data from df is computationally costly so convert it to array first
+        df_array = df.values
+        for row in range(df.shape[0]):
+            for col in range(df.shape[1]):
+                table.setItem(
+                    row, col, QtWidgets.QTableWidgetItem(str(df_array[row, col]))
+                )
+        return 0
+    table.horizontalHeader().setVisible(False)
+    header = table.horizontalHeader()
+    header.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
+    table.setRowCount(df.shape[1])
+    table.setColumnCount(df.shape[0])
+    table.setVerticalHeaderLabels(headers)
     # getting data from df is computationally costly so convert it to array first
     df_array = df.values
-    for row in range(df.shape[0]):
-        for col in range(df.shape[1]):
+    for col in range(df.shape[1]):
+        for row in range(df.shape[0]):
             table.setItem(row, col, QtWidgets.QTableWidgetItem(str(df_array[row, col])))
+    return 0
 
 
 def log(ui, formusado=""):

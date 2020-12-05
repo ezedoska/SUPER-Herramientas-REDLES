@@ -21,6 +21,8 @@ from procs import (
     asigEf,
     logger,
     cruces,
+    desasignar,
+    estado,
 )
 
 
@@ -79,6 +81,7 @@ if __name__ == "__main__":
     ui.asigEfExcel.clicked.connect(lambda: asigEf.Subir_Excel_Asignacion(ui))
     ui.asigEfBoton.clicked.connect(lambda: asigEf.Asignado_Efectores(ui))
     ui.cruceEstadoBoton.clicked.connect(lambda: cruces.Cruce_Estado_DNI(ui))
+    ui.desaBoton.clicked.connect(lambda: desasignar.Desasignado(ui))
     ui.paquete0BotonS.clicked.connect(lambda: paquete0.Paquete_0_Proceso(ui))
     ui.paquete0BotonP.clicked.connect(lambda: paquete0.Paquete_0_Salida(ui))
     ui.paquete2BotonP.clicked.connect(lambda: paquete2.Paquete_2_Proceso(ui))
@@ -89,6 +92,7 @@ if __name__ == "__main__":
     ui.paquete3BotonP.clicked.connect(lambda: paquete3.Paquete_3_Proceso(ui))
     ui.paquete3BotonA.clicked.connect(lambda: paquete3.Paquete_3_Archivo(ui))
     ui.paquete5Boton.clicked.connect(lambda: paquete5.Paquete_5(ui))
+    ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 

@@ -14,9 +14,9 @@ def Forzar_Baja(ui):
     form = ui.fbajaForm.text()
     tipo = ui.fbajaTipo.currentText()
     tipoDict = {
-        "persona": "personasfisicas",
-        "asociado": "asociados",
-        "integrante": "integrantes",
+        "Persona": "personasfisicas",
+        "Asociado": "asociados",
+        "Integrante": "integrantes",
     }
     if form in ["", "0"]:
         return logB(ui, "El campo FORMULARIO no peude estar vacio.", 3)

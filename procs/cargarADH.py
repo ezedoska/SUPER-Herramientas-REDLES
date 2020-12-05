@@ -44,7 +44,7 @@ def Cargar_ADH(ui):
                     @Operador_opcional = NULL,
                     @Ticket_opcional = 0"""
             )
-        log(ui, dni)
+        log(ui)
         return logB(ui, f"Adherente cargado.", 1)
     except Exception as e:
         return logB(ui, f"Error cargando el adherente: {str(e)}", 3)
