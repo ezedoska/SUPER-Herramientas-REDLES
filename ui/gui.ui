@@ -1216,13 +1216,34 @@
                  <property name="currentIndex">
                   <number>0</number>
                  </property>
+                 <widget class="QWidget" name="page_11">
+                  <attribute name="label">
+                   <string>SOMOSO [Solicitudes ANSES]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_16">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="somosoBotonS">
+                     <property name="text">
+                      <string>Subir Solicitudes</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QPushButton" name="somosoBotonI">
+                     <property name="text">
+                      <string>Insertar Solicitudes</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                  <widget class="QWidget" name="page">
                   <property name="geometry">
                    <rect>
                     <x>0</x>
                     <y>0</y>
                     <width>424</width>
-                    <height>91</height>
+                    <height>64</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1251,7 +1272,7 @@
                     <x>0</x>
                     <y>0</y>
                     <width>424</width>
-                    <height>91</height>
+                    <height>64</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1280,7 +1301,7 @@
                     <x>0</x>
                     <y>0</y>
                     <width>424</width>
-                    <height>91</height>
+                    <height>64</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1300,9 +1321,9 @@
                   <property name="geometry">
                    <rect>
                     <x>0</x>
-                    <y>0</y>
-                    <width>424</width>
-                    <height>91</height>
+                    <y>-2</y>
+                    <width>407</width>
+                    <height>70</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1416,8 +1437,8 @@
                   <attribute name="label">
                    <string>Paquete 8 [F1258]</string>
                   </attribute>
-                  <layout class="QFormLayout" name="formLayout_15">
-                   <item row="0" column="0" colspan="2">
+                  <layout class="QGridLayout" name="gridLayout_25">
+                   <item row="0" column="0">
                     <widget class="QPushButton" name="paquete8Boton">
                      <property name="text">
                       <string>Proceso y salida Paquete 8</string>
@@ -1438,8 +1459,8 @@
                   <attribute name="label">
                    <string>Paquete 14 [F1253M]</string>
                   </attribute>
-                  <layout class="QFormLayout" name="formLayout_14">
-                   <item row="0" column="0" colspan="2">
+                  <layout class="QGridLayout" name="gridLayout_24">
+                   <item row="0" column="0">
                     <widget class="QPushButton" name="paquete14Boton">
                      <property name="text">
                       <string>Proceso y salida Paquete 14</string>
@@ -1452,8 +1473,8 @@
                   <attribute name="label">
                    <string>Paquete 15 [Vuelta F1253M]</string>
                   </attribute>
-                  <layout class="QFormLayout" name="formLayout_13">
-                   <item row="0" column="0" colspan="2">
+                  <layout class="QGridLayout" name="gridLayout_23">
+                   <item row="0" column="0">
                     <widget class="QPushButton" name="paquete15Boton">
                      <property name="text">
                       <string>Subida, proceso y archivo Paquete 15</string>

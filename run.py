@@ -8,7 +8,17 @@ from PyQt5 import QtWidgets, QtGui
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
-from paquetes import paquete0, paquete1, paquete2, paquete3, paquete5
+from paquetes import (
+    paquete0,
+    paquete1,
+    paquete2,
+    paquete3,
+    paquete5,
+    paquete8,
+    paquete14,
+    paquete15,
+    somoso,
+)
 from procs import (
     login,
     error9,
@@ -92,6 +102,11 @@ if __name__ == "__main__":
     ui.paquete3BotonP.clicked.connect(lambda: paquete3.Paquete_3_Proceso(ui))
     ui.paquete3BotonA.clicked.connect(lambda: paquete3.Paquete_3_Archivo(ui))
     ui.paquete5Boton.clicked.connect(lambda: paquete5.Paquete_5(ui))
+    ui.paquete8Boton.clicked.connect(lambda: paquete8.Paquete_8(ui))
+    ui.paquete14Boton.clicked.connect(lambda: paquete14.Paquete_14(ui))
+    ui.paquete15Boton.clicked.connect(lambda: paquete15.Paquete_15(ui))
+    ui.somosoBotonS.clicked.connect(lambda: somoso.Subir_Solicitudes(ui))
+    ui.somosoBotonI.clicked.connect(lambda: somoso.Insertar_Solicitudes(ui))
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
