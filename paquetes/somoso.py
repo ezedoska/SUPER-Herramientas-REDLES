@@ -40,12 +40,8 @@ def Subir_Solicitudes(ui):
             1,
         )
 
-    df.loc[
-        (df["IdPrograma"].isnull()) & (df["IdTipoSolicitud"].isin([1, 2])), "IdPrograma"
-    ] = "5"
-    df.loc[
-        (df["Telefono"].isnull()) & (df["IdTipoSolicitud"].isin([1, 2])), "Telefono"
-    ] = "99999999"
+    df.loc[(df["IdPrograma"].isnull()), "IdPrograma"] = "5"
+    df.loc[(df["Telefono"].isnull()), "Telefono"] = "99999999"
     # df = df.drop(df[(df['ADH_Edad'] > 21))
     validator.add_record_length_check("EX2", "unexpected record length")
     # Subimos el DF limpio a la tabla para procesar.
