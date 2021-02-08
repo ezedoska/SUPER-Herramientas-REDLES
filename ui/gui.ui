@@ -114,7 +114,7 @@
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -1217,6 +1217,14 @@
                   <number>0</number>
                  </property>
                  <widget class="QWidget" name="page_11">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>213</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
                   <attribute name="label">
                    <string>SOMOSO [Solicitudes ANSES]</string>
                   </attribute>
@@ -1242,8 +1250,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>64</height>
+                    <width>214</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1271,8 +1279,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>64</height>
+                    <width>214</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1300,8 +1308,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>64</height>
+                    <width>204</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1321,8 +1329,8 @@
                   <property name="geometry">
                    <rect>
                     <x>0</x>
-                    <y>-2</y>
-                    <width>407</width>
+                    <y>0</y>
+                    <width>316</width>
                     <height>70</height>
                    </rect>
                   </property>
@@ -1365,8 +1373,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>91</height>
+                    <width>228</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1394,8 +1402,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>91</height>
+                    <width>204</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1430,8 +1438,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>172</height>
+                    <width>157</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1452,8 +1460,8 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>172</height>
+                    <width>163</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1470,6 +1478,14 @@
                   </layout>
                  </widget>
                  <widget class="QWidget" name="page_10">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>210</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
                   <attribute name="label">
                    <string>Paquete 15 [Vuelta F1253M]</string>
                   </attribute>
@@ -1536,6 +1552,11 @@
              <item>
               <property name="text">
                <string>Integrante</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Movimientos HR</string>
               </property>
              </item>
             </widget>

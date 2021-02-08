@@ -6,6 +6,7 @@ import random
 import pandas as pd
 from robobrowser import RoboBrowser
 import urllib3
+from procs.logger import log, logB
 
 urllib3.disable_warnings()
 
@@ -14,11 +15,14 @@ def Login(ui, version, MainWindow):
     """
     Logueo web, si está todo ok guarda un pickle para logueo offline
     """
-    versionEXE = pd.read_sql_query(
-        f"""SELECT ultimaversion 
-            FROM [adm_efectores].[SQLemore].[ultimaversionExe]""",
-        con=engine,
-    )
+    try:
+        versionEXE = pd.read_sql_query(
+            f"""SELECT ultimaversion 
+                FROM [adm_efectores].[SQLemore].[ultimaversionExe]""",
+            con=engine,
+        )
+    except Exception as e:
+        return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
     if versionEXE["ultimaversion"].iloc[0] != version:
         alert = QtWidgets.QMessageBox()
         alert.setWindowTitle("ERROR")
@@ -41,12 +45,15 @@ def Login(ui, version, MainWindow):
     aspx_session_form = browser.get_forms()
     browser.submit_form(aspx_session_form[0])
     if browser.find(string="cerrar sesión usuario"):
-        usr = pd.read_sql_query(
-            f"""SELECT nombres 
-                                    FROM operadores 
-                                    WHERE ndocumento={usr}""",
-            con=engine,
-        )
+        try:
+            usr = pd.read_sql_query(
+                f"""SELECT nombres 
+                                        FROM operadores 
+                                        WHERE ndocumento={usr}""",
+                con=engine,
+            )
+        except Exception as e:
+            return logB(ui, f"Log in error: {str(e)}", 3)
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
         log(ui)
