@@ -22,12 +22,11 @@ def Estado(ui):
         "Integrante": f"and [Tipo de Efector]='{tipoForm}'",
     }
     if Id in ["", "0"]:
-        return logB(ui, f"El campo FORMULARIO no peude estar vacio.", 3)
+        return logB(ui, f"El campo ID no peude estar vacio.", 3)
     if tipoForm == "Movimientos HR":
         script = f"""select * 
                     from [adm_efectores].[SQLemore].[ExeStats]
                     where formusado='{Id}' order by fecha"""
-        print(script)
     else:
         script = f"""select * 
                     from estadorapido
