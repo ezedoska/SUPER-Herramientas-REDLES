@@ -91,7 +91,7 @@ def Login(ui, version, MainWindow):
             con=engine,
         )
     except Exception as e:
-        return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
+        return logB(ui, f"Error leyendo usuario en la base: {str(e)}", 3)
     if usr.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)

@@ -14,7 +14,7 @@ def Cruce_Estado_DNI(ui):
         )
     except Exception as e:
         return logB(ui, f"Error subiendo a tabla temporal: {str(e)}", 3)
-
+    logB(ui, f"Excel cargado", 1)
     script = """
                     SELECT cr.orden,
                         cr.ndoc,
@@ -61,6 +61,7 @@ def Cruce_Estado_DNI(ui):
                                 ON prov.codafip = l.id_provincia
                         LEFT JOIN actividades act
                                 ON act.idactividad = ped.id_actividad
+                                order by orden
                 """
 
     fechaexcel = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
