@@ -32,6 +32,7 @@ def MostrarEnTabla(df, table, orientacion=1):
     if orientacion == 1:
         table.setRowCount(df.shape[0])
         table.setColumnCount(df.shape[1])
+        table.horizontalHeader().setVisible(True)
         table.setHorizontalHeaderLabels(headers)
         # getting data from df is computationally costly so convert it to array first
         df_array = df.values

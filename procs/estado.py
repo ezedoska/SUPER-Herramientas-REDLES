@@ -6,6 +6,7 @@ from PyQt5 import QtWidgets, QtGui
 
 
 def Estado(ui):
+    ui.estadoTabla.clear()
     Id = ui.estadoID.text()
     tipoForm = ui.estadoTipo.currentText()
     tipoDict = {

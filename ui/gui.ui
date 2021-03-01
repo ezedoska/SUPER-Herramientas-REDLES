@@ -185,7 +185,7 @@ p, li { white-space: pre-wrap; }
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -266,7 +266,7 @@ p, li { white-space: pre-wrap; }
               <enum>QTabWidget::Rounded</enum>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>3</number>
              </property>
              <property name="usesScrollButtons">
               <bool>false</bool>
@@ -542,10 +542,24 @@ p, li { white-space: pre-wrap; }
                  </item>
                 </widget>
                </item>
-               <item row="2" column="0" colspan="2">
+               <item row="3" column="0" colspan="2">
                 <widget class="QPushButton" name="fp8Boton">
                  <property name="text">
                   <string>Insertar P8</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_55">
+                 <property name="text">
+                  <string>Lote</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="fp8Form_4">
+                 <property name="inputMask">
+                  <string>999</string>
                  </property>
                 </widget>
                </item>
@@ -696,7 +710,7 @@ p, li { white-space: pre-wrap; }
               <bool>true</bool>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>3</number>
              </property>
              <property name="usesScrollButtons">
               <bool>true</bool>
@@ -1147,8 +1161,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>175</width>
-                    <height>41</height>
+                    <width>424</width>
+                    <height>145</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1169,8 +1183,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>175</width>
-                    <height>41</height>
+                    <width>424</width>
+                    <height>118</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1186,13 +1200,27 @@ p, li { white-space: pre-wrap; }
                    </item>
                   </layout>
                  </widget>
+                 <widget class="QWidget" name="page">
+                  <attribute name="label">
+                   <string>[Cruce Precarios]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_4">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="crucePrecariosBoton">
+                     <property name="text">
+                      <string>Generar cruce Precarios</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                  <widget class="QWidget" name="page_8">
                   <property name="geometry">
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>175</width>
-                    <height>41</height>
+                    <width>424</width>
+                    <height>118</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1213,8 +1241,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>188</width>
-                    <height>67</height>
+                    <width>424</width>
+                    <height>118</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1467,6 +1495,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>147</x>
      <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>estadoID</sender>
+   <signal>returnPressed()</signal>
+   <receiver>estadoBoton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>253</x>
+     <y>186</y>
     </hint>
    </hints>
   </connection>
