@@ -3,6 +3,8 @@ import pandas as pd
 from dateutil import parser
 from procs.db import engine
 from PyQt5 import QtWidgets, QtGui
+import random
+from procs import memes
 
 
 def Estado(ui):
@@ -40,13 +42,14 @@ def Estado(ui):
         MostrarEnTabla(estado, ui.estadoTabla, 0)
         ui.estadoTabla.setItem(0, 0, QtWidgets.QTableWidgetItem())
         ui.estadoTabla.item(0, 0).setBackground(QtGui.QColor(65, 65, 65))
-        ui.estadoTabla.setItem(7, 0, QtWidgets.QTableWidgetItem())
-        ui.estadoTabla.item(7, 0).setBackground(QtGui.QColor(65, 65, 65))
-        ui.estadoTabla.setItem(17, 0, QtWidgets.QTableWidgetItem())
-        ui.estadoTabla.item(17, 0).setBackground(QtGui.QColor(65, 65, 65))
+        ui.estadoTabla.setItem(10, 0, QtWidgets.QTableWidgetItem())
+        ui.estadoTabla.item(10, 0).setBackground(QtGui.QColor(65, 65, 65))
+        ui.estadoTabla.setItem(20, 0, QtWidgets.QTableWidgetItem())
+        ui.estadoTabla.item(20, 0).setBackground(QtGui.QColor(65, 65, 65))
     elif tipoForm == "Movimientos HR":
         MostrarEnTabla(estado, ui.estadoTabla)
     else:
         logB(ui, f"No se encontro el ID {Id} en la base de {tipoForm}", 3)
         pass
+    ui.quoteLabel.setText(random.choice(memes.redlestips))
     return 0

@@ -84,7 +84,7 @@ def Login(ui, version, MainWindow):
         )
         return alert.exec_()
     try:
-        usr = pd.read_sql_query(
+        usrLog = pd.read_sql_query(
             f"""SELECT nombres
                                          FROM operadores
                                          WHERE ndocumento={usr} and palabraclave='{pwd}'""",
@@ -92,13 +92,15 @@ def Login(ui, version, MainWindow):
         )
     except Exception as e:
         return logB(ui, f"Error leyendo usuario en la base: {str(e)}", 3)
-    if usr.empty == False:
+    if usrLog.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
+        if usr in ("32737943", "30832950", "35896637"):
+            ui.tabPaquetes.setEnabled(True)
         log(ui)
         return MainWindow.setWindowTitle(
             f"[ SUPER Herramientas REDLES - v.{version} ] - "
-            + f"Bienvenide {usr['nombres'].iloc[0]}.{random.choice(redleshello)}"
+            + f"Bienvenide {usrLog['nombres'].iloc[0]}.{random.choice(redleshello)}"
         )
     else:
         return MainWindow.setWindowTitle(

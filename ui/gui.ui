@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>814</width>
+    <width>799</width>
     <height>474</height>
    </rect>
   </property>
@@ -185,7 +185,7 @@ p, li { white-space: pre-wrap; }
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -266,7 +266,7 @@ p, li { white-space: pre-wrap; }
               <enum>QTabWidget::Rounded</enum>
              </property>
              <property name="currentIndex">
-              <number>3</number>
+              <number>0</number>
              </property>
              <property name="usesScrollButtons">
               <bool>false</bool>
@@ -373,7 +373,7 @@ p, li { white-space: pre-wrap; }
                <item row="2" column="0" colspan="2">
                 <widget class="QPushButton" name="reevBoton">
                  <property name="text">
-                  <string>Reevaluar</string>
+                  <string>Reevaluar positivo</string>
                  </property>
                 </widget>
                </item>
@@ -386,311 +386,44 @@ p, li { white-space: pre-wrap; }
                </item>
               </layout>
              </widget>
-             <widget class="QWidget" name="tabRP0">
+             <widget class="QWidget" name="tabPrecarios">
               <attribute name="title">
-               <string>Reenviar P0</string>
+               <string>Precarios</string>
               </attribute>
-              <layout class="QFormLayout" name="formLayout_3">
+              <layout class="QGridLayout" name="gridLayout_16">
                <item row="0" column="0">
-                <widget class="QLabel" name="label_5">
-                 <property name="text">
-                  <string>Formulario</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="rp0Form">
-                 <property name="inputMask">
-                  <string>999999999</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>Tipo</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="rp0Tipo">
-                 <item>
-                  <property name="text">
-                   <string>Persona</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Asociado</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Integrante</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item row="2" column="0" colspan="2">
-                <widget class="QPushButton" name="rp0Boton">
-                 <property name="text">
-                  <string>Borrar P0</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="tabFB">
-              <attribute name="title">
-               <string>Forzar Baja</string>
-              </attribute>
-              <layout class="QFormLayout" name="formLayout_4">
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_7">
-                 <property name="text">
-                  <string>Formulario</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="fbajaForm">
-                 <property name="inputMask">
-                  <string>99999999</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_8">
-                 <property name="text">
-                  <string>Tipo</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="fbajaTipo">
-                 <item>
-                  <property name="text">
-                   <string>Persona</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Asociado</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Integrante</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item row="2" column="0" colspan="2">
-                <widget class="QPushButton" name="fbajaBoton">
-                 <property name="text">
-                  <string>Insertar Baja</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="tabFP8">
-              <attribute name="title">
-               <string>Forzar P8</string>
-              </attribute>
-              <layout class="QFormLayout" name="formLayout_5">
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_9">
-                 <property name="text">
-                  <string>Formulario</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="fp8Form">
-                 <property name="inputMask">
-                  <string>99999999</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_10">
-                 <property name="text">
-                  <string>Tipo</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="fp8Tipo">
-                 <item>
-                  <property name="text">
-                   <string>Persona</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Asociado</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Integrante</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item row="3" column="0" colspan="2">
-                <widget class="QPushButton" name="fp8Boton">
-                 <property name="text">
-                  <string>Insertar P8</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_55">
-                 <property name="text">
-                  <string>Lote</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="fp8Form_4">
-                 <property name="inputMask">
-                  <string>999</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="tabCADH">
-              <attribute name="title">
-               <string>Cargar ADH</string>
-              </attribute>
-              <layout class="QFormLayout" name="formLayout_6">
-               <item row="0" column="0" colspan="2">
-                <widget class="QGroupBox" name="groupBox">
+                <widget class="QGroupBox" name="groupBox_3">
                  <property name="title">
-                  <string>Info Titular</string>
+                  <string>[Cruce Precarios]</string>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_15">
-                  <item row="0" column="1">
-                   <widget class="QLineEdit" name="cadhCUIT">
-                    <property name="inputMask">
-                     <string>99999999999</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_11">
+                 <layout class="QFormLayout" name="formLayout_5">
+                  <item row="0" column="0" colspan="2">
+                   <widget class="QPushButton" name="crucePrecariosBoton">
                     <property name="text">
-                     <string>CUIT Titular</string>
+                     <string>Generar excel</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
                </item>
-               <item row="1" column="0" colspan="2">
-                <widget class="QGroupBox" name="groupBox_2">
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_4">
                  <property name="title">
-                  <string>Info ADH</string>
+                  <string>[Subida Cermi]</string>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_14">
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_12">
-                    <property name="text">
-                     <string>Movimiento</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QComboBox" name="cadhMov">
-                    <item>
-                     <property name="text">
-                      <string>Alta</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Baja</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_13">
-                    <property name="text">
-                     <string>Apellido </string>
-                    </property>
-                   </widget>
-                  </item>
+                 <layout class="QGridLayout" name="gridLayout_17">
                   <item row="1" column="1">
-                   <widget class="QLineEdit" name="cadhApellido">
-                    <property name="maxLength">
-                     <number>50</number>
-                    </property>
-                   </widget>
+                   <widget class="QTableWidget" name="cermiTabla"/>
                   </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_14">
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="cermiBoton">
                     <property name="text">
-                     <string>Nombre</string>
+                     <string>Cargar excel</string>
                     </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QLineEdit" name="cadhNombre">
-                    <property name="maxLength">
-                     <number>50</number>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_16">
-                    <property name="text">
-                     <string>DNI</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QLineEdit" name="cadhDNI">
-                    <property name="inputMask">
-                     <string>99999999</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QLabel" name="label_15">
-                    <property name="text">
-                     <string>Parentesco</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QComboBox" name="cadhParentezco">
-                    <item>
-                     <property name="text">
-                      <string>Hijo</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Conyugue</string>
-                     </property>
-                    </item>
                    </widget>
                   </item>
                  </layout>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QPushButton" name="cadhBoton">
-                 <property name="text">
-                  <string>Cargar ADH</string>
-                 </property>
                 </widget>
                </item>
               </layout>
@@ -701,19 +434,25 @@ p, li { white-space: pre-wrap; }
          </widget>
          <widget class="QWidget" name="TabAC">
           <attribute name="title">
-           <string>Asignaciones y Cruces</string>
+           <string>Asignaciones/Cruces</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_6">
            <item row="0" column="0">
-            <widget class="QTabWidget" name="asigEf">
+            <widget class="QTabWidget" name="tabAsigEf">
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="currentIndex">
-              <number>3</number>
+              <number>0</number>
              </property>
              <property name="usesScrollButtons">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
              <widget class="QWidget" name="tabExp">
               <attribute name="title">
@@ -896,6 +635,9 @@ p, li { white-space: pre-wrap; }
                  <property name="inputMask">
                   <string>9999999999999</string>
                  </property>
+                 <property name="placeholderText">
+                  <string>Año + Numero</string>
+                 </property>
                 </widget>
                </item>
                <item row="3" column="0">
@@ -974,6 +716,9 @@ p, li { white-space: pre-wrap; }
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Año + Numero</string>
                  </property>
                 </widget>
                </item>
@@ -1161,8 +906,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>145</height>
+                    <width>175</width>
+                    <height>41</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1178,71 +923,13 @@ p, li { white-space: pre-wrap; }
                    </item>
                   </layout>
                  </widget>
-                 <widget class="QWidget" name="page_7">
-                  <property name="geometry">
-                   <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>424</width>
-                    <height>118</height>
-                   </rect>
-                  </property>
-                  <attribute name="label">
-                   <string>[Cruce ANSES por formulario]</string>
-                  </attribute>
-                  <layout class="QFormLayout" name="formLayout_9">
-                   <item row="0" column="0" colspan="2">
-                    <widget class="QPushButton" name="cruceAnsesBoton">
-                     <property name="text">
-                      <string>Cargar excel y generar estado</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                 <widget class="QWidget" name="page">
-                  <attribute name="label">
-                   <string>[Cruce Precarios]</string>
-                  </attribute>
-                  <layout class="QGridLayout" name="gridLayout_4">
-                   <item row="0" column="0">
-                    <widget class="QPushButton" name="crucePrecariosBoton">
-                     <property name="text">
-                      <string>Generar cruce Precarios</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                 <widget class="QWidget" name="page_8">
-                  <property name="geometry">
-                   <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>424</width>
-                    <height>118</height>
-                   </rect>
-                  </property>
-                  <attribute name="label">
-                   <string>[Cruce COOP por Matricula]</string>
-                  </attribute>
-                  <layout class="QFormLayout" name="formLayout_10">
-                   <item row="0" column="0" colspan="2">
-                    <widget class="QPushButton" name="cruceMatriculaBoton">
-                     <property name="text">
-                      <string>Cargar excel y generar estado</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
                  <widget class="QWidget" name="page_9">
                   <property name="geometry">
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>424</width>
-                    <height>118</height>
+                    <width>192</width>
+                    <height>67</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1252,7 +939,7 @@ p, li { white-space: pre-wrap; }
                    <item row="0" column="0">
                     <widget class="QLabel" name="redlesAnexoLabel">
                      <property name="text">
-                      <string>Expediente</string>
+                      <string>Expediente:</string>
                      </property>
                     </widget>
                    </item>
@@ -1266,6 +953,12 @@ p, li { white-space: pre-wrap; }
                      </property>
                      <property name="inputMask">
                       <string>9999999999999</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Año + Numero</string>
                      </property>
                     </widget>
                    </item>
@@ -1284,6 +977,146 @@ p, li { white-space: pre-wrap; }
                    </item>
                   </layout>
                  </widget>
+                 <widget class="QWidget" name="page">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>354</width>
+                    <height>93</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>[Cruce ANEXO para generar]</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_18">
+                   <item row="1" column="1">
+                    <widget class="QComboBox" name="cruceAnexoTipo">
+                     <item>
+                      <property name="text">
+                       <string>Persona</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Asociado</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Integrante</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_23">
+                     <property name="text">
+                      <string>Desde [M/D/A]</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QDateEdit" name="cruceAnexoDesde">
+                     <property name="dateTime">
+                      <datetime>
+                       <hour>0</hour>
+                       <minute>0</minute>
+                       <second>0</second>
+                       <year>2020</year>
+                       <month>2</month>
+                       <day>20</day>
+                      </datetime>
+                     </property>
+                     <property name="calendarPopup">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QLabel" name="label_24">
+                     <property name="text">
+                      <string>Hasta [M/D/A]</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_25">
+                     <property name="text">
+                      <string>Tipo Efector</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0" colspan="4">
+                    <widget class="QPushButton" name="cruceGAnexoBoton">
+                     <property name="text">
+                      <string>Generar cruce para ANEXO</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QLabel" name="label_26">
+                     <property name="text">
+                      <string>Estado</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="3">
+                    <widget class="QComboBox" name="cruceAnexoEstado">
+                     <item>
+                      <property name="text">
+                       <string>Altas ANSES</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Altas TOTAL</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Negativos</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Reevaluados</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Error 9</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Bajas</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QDateEdit" name="cruceAnexoHasta">
+                     <property name="dateTime">
+                      <datetime>
+                       <hour>0</hour>
+                       <minute>0</minute>
+                       <second>0</second>
+                       <year>2020</year>
+                       <month>2</month>
+                       <day>20</day>
+                      </datetime>
+                     </property>
+                     <property name="displayFormat">
+                      <string>M/d/yyyy</string>
+                     </property>
+                     <property name="calendarPopup">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                </item>
               </layout>
@@ -1292,7 +1125,328 @@ p, li { white-space: pre-wrap; }
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="tab_3">
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>Paquetes</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QTabWidget" name="tabPaquetes">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="usesScrollButtons">
+              <bool>false</bool>
+             </property>
+             <widget class="QWidget" name="tabFB">
+              <attribute name="title">
+               <string>Forzar Baja</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_13">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>Formulario</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="fbajaForm">
+                 <property name="inputMask">
+                  <string>99999999</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Tipo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="fbajaTipo">
+                 <item>
+                  <property name="text">
+                   <string>Persona</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Asociado</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Integrante</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QPushButton" name="fbajaBoton">
+                 <property name="text">
+                  <string>Insertar Baja</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tabFP8">
+              <attribute name="title">
+               <string>Forzar P8</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_14">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>Formulario</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="fp8Form">
+                 <property name="inputMask">
+                  <string>99999999</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_10">
+                 <property name="text">
+                  <string>Tipo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="fp8Tipo">
+                 <item>
+                  <property name="text">
+                   <string>Persona</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Asociado</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Integrante</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QPushButton" name="fp8Boton">
+                 <property name="text">
+                  <string>Insertar P8</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tabADH">
+              <attribute name="title">
+               <string>Forzar salida ADH</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_13">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="title">
+                  <string>Info Titular</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_15">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_11">
+                    <property name="text">
+                     <string>CUIT Titular</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="cadhCUIT">
+                    <property name="inputMask">
+                     <string>99999999999</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="cadhBoton">
+                 <property name="text">
+                  <string>Cargar ADH</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_2">
+                 <property name="title">
+                  <string>Info ADH</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_14">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_12">
+                    <property name="text">
+                     <string>Movimiento</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="cadhMov">
+                    <item>
+                     <property name="text">
+                      <string>Alta</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Baja</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_13">
+                    <property name="text">
+                     <string>Apellido </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="cadhApellido">
+                    <property name="maxLength">
+                     <number>50</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_14">
+                    <property name="text">
+                     <string>Nombre</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="cadhNombre">
+                    <property name="maxLength">
+                     <number>50</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_16">
+                    <property name="text">
+                     <string>DNI</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="cadhDNI">
+                    <property name="inputMask">
+                     <string>99999999</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_15">
+                    <property name="text">
+                     <string>Parentesco</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="cadhParentezco">
+                    <item>
+                     <property name="text">
+                      <string>Hijo</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Conyugue</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tabRP0">
+              <attribute name="title">
+               <string>Borrar P0</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_4">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>Formulario</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="rp0Form">
+                 <property name="inputMask">
+                  <string>999999999</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>Tipo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="rp0Tipo">
+                 <item>
+                  <property name="text">
+                   <string>Persona</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Asociado</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Integrante</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QPushButton" name="rp0Boton">
+                 <property name="text">
+                  <string>Borrar P0</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabEstado">
           <attribute name="title">
            <string>Estado</string>
           </attribute>
@@ -1475,9 +1629,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>reevForm</tabstop>
   <tabstop>reevTipo</tabstop>
   <tabstop>reevBoton</tabstop>
-  <tabstop>rp0Form</tabstop>
-  <tabstop>rp0Tipo</tabstop>
-  <tabstop>rp0Boton</tabstop>
   <tabstop>reevUndo</tabstop>
  </tabstops>
  <resources/>

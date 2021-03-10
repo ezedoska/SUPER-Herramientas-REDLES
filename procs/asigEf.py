@@ -9,12 +9,17 @@ def Subir_Excel_Asignacion(ui):
 
     df = pd.read_excel("asignacion.xlsx")
 
+    if df.empty:
+        return logB(ui, "El excel esta vacio", 2)
+
     if len(df.Expediente.unique()) > 1:
         return logB(ui, "Hay mas de un n° de expediente en la columna Expediente", 2)
     if len(df.Dependencia.unique()) > 1:
         return logB(ui, "Hay mas de una dependencia en la columna Dependencia", 2)
     if len(df.Caja.unique()) > 1:
         return logB(ui, "Hay mas de un n° de caja en la columna Caja", 2)
+
+    exp = df.iloc[0, 2]
 
     try:
         with engine.begin() as connection:
@@ -25,9 +30,9 @@ def Subir_Excel_Asignacion(ui):
         ui.asigEfTipo.setEnabled(True)
         ui.asigEfBoton.setEnabled(True)
         ui.asigEfExcel.setEnabled(False)
-        return logB(ui, f"El excel se cargo correctamente.", 1)
+        return logB(ui, f"[{exp}]El excel se cargo correctamente.", 1)
     except Exception as e:
-        return logB(ui, f"Hubo un error: {str(e)}", 3)
+        return logB(ui, f"[{exp}]Hubo un error: {str(e)}", 3)
 
 
 def Asignado_Efectores(ui):
