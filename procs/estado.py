@@ -46,6 +46,8 @@ def Estado(ui):
         ui.estadoTabla.item(10, 0).setBackground(QtGui.QColor(65, 65, 65))
         ui.estadoTabla.setItem(20, 0, QtWidgets.QTableWidgetItem())
         ui.estadoTabla.item(20, 0).setBackground(QtGui.QColor(65, 65, 65))
+        ui.estadoTabla.setItem(28, 0, QtWidgets.QTableWidgetItem())
+        ui.estadoTabla.item(28, 0).setBackground(QtGui.QColor(65, 65, 65))
     elif tipoForm == "Movimientos HR":
         MostrarEnTabla(estado, ui.estadoTabla)
         ui.estadoTabla.horizontalHeader().setSectionResizeMode(
