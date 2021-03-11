@@ -47,6 +47,9 @@ def Cermi_Subida(ui):
     if result.empty:
         return logB(ui, f"La carga CERMI termino sin errores.", 1)
     MostrarEnTabla(result, ui.cermiTabla)
+    ui.cermiTabla.horizontalHeader().setSectionResizeMode(
+        QtWidgets.QHeaderView.ResizeToContents
+    )
     return logB(ui, f"La carga CERMI termino con errores.", 2)
 
 

@@ -27,8 +27,8 @@ def Estado(ui):
     if Id in ["", "0"]:
         return logB(ui, f"El campo ID no peude estar vacio.", 3)
     if tipoForm == "Movimientos HR":
-        script = f"""select * 
-                    from [adm_efectores].[SQLemore].[ExeStats]
+        script = f"""select apellidos,funcion,fecha 
+                    from [VWExeStats]
                     where formusado='{Id}' order by fecha"""
     else:
         script = f"""select * 
@@ -48,6 +48,9 @@ def Estado(ui):
         ui.estadoTabla.item(20, 0).setBackground(QtGui.QColor(65, 65, 65))
     elif tipoForm == "Movimientos HR":
         MostrarEnTabla(estado, ui.estadoTabla)
+        ui.estadoTabla.horizontalHeader().setSectionResizeMode(
+            QtWidgets.QHeaderView.ResizeToContents
+        )
     else:
         logB(ui, f"No se encontro el ID {Id} en la base de {tipoForm}", 3)
         pass

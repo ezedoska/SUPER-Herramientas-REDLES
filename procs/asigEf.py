@@ -2,6 +2,7 @@ from procs.logger import logB, log, MostrarEnTabla
 import pandas as pd
 from dateutil import parser
 from procs.db import engine
+from PyQt5 import QtWidgets, QtGui
 
 
 def Subir_Excel_Asignacion(ui):
@@ -72,4 +73,7 @@ def Asignado_Efectores(ui):
     if result.empty:
         return logB(ui, f"El asignado termino sin errores.", 1)
     MostrarEnTabla(result, ui.asigEfTabla)
+    ui.asigEfTabla.horizontalHeader().setSectionResizeMode(
+        QtWidgets.QHeaderView.ResizeToContents
+    )
     return logB(ui, f"El asignado termino con errores.", 1)
