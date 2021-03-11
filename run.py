@@ -94,6 +94,7 @@ if __name__ == "__main__":
     ui.cermiBoton.clicked.connect(lambda: cermi.Cermi_Subida(ui))
     ui.crucePrecariosBoton.clicked.connect(lambda: cermi.Cermi_Listado(ui))
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
+    ui.paquetesBoton.clicked.connect(lambda: estado.Paquetes(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 

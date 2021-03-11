@@ -1451,60 +1451,91 @@ p, li { white-space: pre-wrap; }
            <string>Estado</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_29">
-           <item row="0" column="3">
-            <widget class="QLineEdit" name="estadoID"/>
-           </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="label_17">
-             <property name="text">
-              <string>Tipo ID</string>
+            <widget class="QTabWidget" name="tabWidget">
+             <property name="currentIndex">
+              <number>0</number>
              </property>
-            </widget>
-           </item>
-           <item row="2" column="0" colspan="4">
-            <widget class="QTableWidget" name="estadoTabla"/>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_18">
-             <property name="text">
-              <string>ID</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="estadoTipo">
-             <item>
-              <property name="text">
-               <string>DNI</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Persona Fisica</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Asociado</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Integrante</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Movimientos HR</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="4">
-            <widget class="QPushButton" name="estadoBoton">
-             <property name="text">
-              <string>Buscar</string>
-             </property>
+             <widget class="QWidget" name="tab_2">
+              <attribute name="title">
+               <string>Formularios</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_19">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="text">
+                  <string>Tipo ID</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="estadoTipo">
+                 <item>
+                  <property name="text">
+                   <string>DNI</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Persona Fisica</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Asociado</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Integrante</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Movimientos HR</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLineEdit" name="estadoID"/>
+               </item>
+               <item row="1" column="0" colspan="4">
+                <widget class="QPushButton" name="estadoBoton">
+                 <property name="text">
+                  <string>Buscar</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="4">
+                <widget class="QTableWidget" name="estadoTabla"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_3">
+              <attribute name="title">
+               <string>Paquetes</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_20">
+               <item row="0" column="0">
+                <widget class="QPushButton" name="paquetesBoton">
+                 <property name="text">
+                  <string>Traer estado paquetes</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QTableWidget" name="paquetesTabla"/>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -1646,22 +1677,6 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>147</x>
      <y>55</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>estadoID</sender>
-   <signal>returnPressed()</signal>
-   <receiver>estadoBoton</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>339</x>
-     <y>158</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>253</x>
-     <y>186</y>
     </hint>
    </hints>
   </connection>

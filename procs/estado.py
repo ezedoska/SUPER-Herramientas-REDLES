@@ -56,3 +56,21 @@ def Estado(ui):
         pass
     ui.quoteLabel.setText(random.choice(memes.redlestips))
     return 0
+
+
+def Paquetes(ui):
+    script = """SELECT *
+               FROM PaquetesEnviados
+               order by envio"""
+    estado = pd.read_sql_query(script, con=engine)
+    script2 = """SELECT *
+               FROM estadopaquetes
+               """
+    estado2 = pd.read_sql_query(script2, con=engine)
+    mensaje = estado2.iloc[0, 0]
+    MostrarEnTabla(estado, ui.paquetesTabla)
+    ui.paquetesTabla.horizontalHeader().setSectionResizeMode(
+        QtWidgets.QHeaderView.ResizeToContents
+    )
+    logB(ui, mensaje)
+    return 0
