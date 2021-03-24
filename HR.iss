@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Super Herramientas REDLES"
-#define MyAppVersion "2.20210208"
+#define MyAppVersion "2.20210319"
 #define MyAppPublisher "Doskapps"
 #define MyAppURL "https://registroefectores.desarrollosocial.gob.ar"
 #define MyAppExeName "run.exe"
@@ -23,9 +23,9 @@ DisableDirPage=yes
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\moree\Desktop
+OutputDir=C:\Users\emore\Desktop
 OutputBaseFilename=SuperHerramientasREDLES
-SetupIconFile=C:\Users\moree\Desktop\super-herramientas-redles\icon.ico
+SetupIconFile=C:\Users\emore\Desktop\super-herramientas-redles\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -38,8 +38,8 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\moree\Desktop\super-herramientas-redles\dist\run\run.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\moree\Desktop\super-herramientas-redles\dist\run\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\run\run.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\run\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -48,6 +48,7 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 Name: "{autodesktop}\asignacion"; Filename: "{app}\asignacion.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\cruceDNI"; Filename: "{app}\cruceDNI.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\cruceFORM"; Filename: "{app}\cruceFORM.xlsx"; Tasks: desktopicon
+Name: "{autodesktop}\Codigos-Caido y Negativos"; Filename: "{app}\codigos.txt"; Tasks: desktopicon
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
