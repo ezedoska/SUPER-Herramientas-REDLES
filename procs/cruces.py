@@ -28,7 +28,7 @@ def Cruce_Estado_DNI(ui):
                         CASE pe.tipoef
                         WHEN 1 THEN 'Persona Fisica'
                         WHEN 3 THEN 'Asociado'
-                        WHEN 5 THEN 'Integrante'                      AS Tipo_de_Efector,
+                        WHEN 5 THEN 'Integrante'   END                AS Tipo_de_Efector,
                         pe.nroformulario,
                         CASE pe.estado
                             WHEN 1 THEN 'Efector'
@@ -37,7 +37,7 @@ def Cruce_Estado_DNI(ui):
                             WHEN 4 THEN 'En trámite'
                             ELSE 'No en base'
                         END                                           AS Estado,
-                        pe.tipoef + '_' +
+                        cast(pe.tipoef as varchar) + '_' +
                         CASE pe.estado
                             WHEN 1 THEN 'Efector'
                             WHEN 2 THEN 'Baja'

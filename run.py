@@ -34,6 +34,7 @@ from procs import (
     desasignar,
     estado,
     cermi,
+    CambioCUIT,
 )
 
 
@@ -67,13 +68,13 @@ if __name__ == "__main__":
     )
 
     MainWindow.show()
-    ui.mainGroup.setEnabled(False)
+    ui.mainGroup.setEnabled(True)
     MainWindow.setWindowIcon(QtGui.QIcon("icon.ico"))
     ui.Main.setPixmap(QtGui.QPixmap("Main.png"))
     pixmap = QtGui.QPixmap("Main.png")
     pixmap2 = pixmap.scaledToWidth(16)
     pixmap3 = pixmap.scaledToHeight(16)
-    version = "2.20210310"
+    version = "2.20210319"
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))
@@ -95,6 +96,9 @@ if __name__ == "__main__":
     ui.crucePrecariosBoton.clicked.connect(lambda: cermi.Cermi_Listado(ui))
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
     ui.paquetesBoton.clicked.connect(lambda: estado.Paquetes(ui))
+    ui.ccSubirBoton.clicked.connect(lambda: CambioCUIT.Subir_Cambio_CUIT(ui))
+    ui.ccp0Boton.clicked.connect(lambda: CambioCUIT.Generar_P0(ui))
+    ui.ccp4Boton.clicked.connect(lambda: CambioCUIT.Generar_P4(ui))
 
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
