@@ -19,7 +19,7 @@ def Cargar_ADH(ui):
     nombre = ui.cadhNombre.text()
     dni = ui.cadhDNI.text()
     parentezco = ui.cadhParentezco.currentText()
-    parent = {"Hije": 3, "Conyuge": 2}
+    parent = {"Hijo": 3, "Conyuge": 2}
 
     if cuit in ["", "0"] or len(cuit) < 11:
         return logB(ui, f"Campo CUIT son 11 digitos.", 3)
@@ -27,13 +27,12 @@ def Cargar_ADH(ui):
         return logB(ui, f"El campo APELLIDO no peude estar vacio.", 3)
     if nombre in ["", "0"]:
         return logB(ui, f"El campo NOMBRE no peude estar vacio.", 3)
-    if dni in ["", "0"] or len(dni) < 9:
-        return logB(ui, f"Campo DNI son 8 digitos.", 3)
+    if dni in ["", "0"] or len(dni) < 8:
+        return logB(ui, f"Campo DNI son 8 digitos.{len(dni)}", 3)
 
     try:
         with engine.begin() as connection:
-            connection.execute(
-                f"""EXEC [dbo].[proc_P14_03_ADHReclamos]
+            connection.execute(f"""EXEC [dbo].[proc_P14_03_ADHReclamos]
                     @CUITTitular = '{cuit}',
                     @Movimiento_A_B ='{mov}',
                     @Apellido_y_nombre = '{apellido} {nombre}',
@@ -42,8 +41,7 @@ def Cargar_ADH(ui):
                     @Periodo_opcional = NULL,
                     @Duplicado_1Sí_0No_opcional = NULL,
                     @Operador_opcional = NULL,
-                    @Ticket_opcional = 0"""
-            )
+                    @Ticket_opcional = 0""")
         log(ui)
         return logB(ui, f"Adherente cargado.", 1)
     except Exception as e:

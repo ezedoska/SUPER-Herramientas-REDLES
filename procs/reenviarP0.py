@@ -21,21 +21,23 @@ def Reenviar_P0(ui):
             return logB(ui, f"[{form}] El formulario no existe.", 2)
         elif check["estado"].iloc[0] != 4:
             return logB(
-                ui, f"[{form}] El formulario cuenta con otros paquetes, verificar.", 2
-            )
+                ui,
+                f"[{form}] El formulario cuenta con otros paquetes, verificar.",
+                2)
 
         # Si esta en tramite todo ok y borramos.
         try:
             with engine.begin() as connection:
-                connection.execute(
-                    f"""DELETE 
+                connection.execute(f"""DELETE 
                         FROM [adm_efectores].[dbo].[{tipo}s_paquete_0] 
-                        WHERE nroredles={form}"""
-                )
+                        WHERE nroredles={form}""")
         except Exception as e:
             return logB(
-                ui, f"[{form}] Ocurrio un error al borrar el paquete 0: {str(e)}", 3
-            )
+                ui,
+                f"[{form}] Ocurrio un error al borrar el paquete 0: {str(e)}",
+                3)
         return logB(ui, f"[{form}] Se borro el paquete 0.", 1)
     except Exception as e:
-        return logB(ui, f"[{form}] Ocurrio un error chequeando estado: {str(e)}", 3)
+        return logB(ui,
+                    f"[{form}] Ocurrio un error chequeando estado: {str(e)}",
+                    3)
