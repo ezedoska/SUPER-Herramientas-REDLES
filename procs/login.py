@@ -79,8 +79,8 @@ def Login(ui, version, MainWindow):
         alert = QtWidgets.QMessageBox()
         alert.setWindowTitle("ERROR")
         alert.setText(
-            f"Estas usando una version vieja de este aplicativo,"
-            + f"por favor actualizar a la version {versionEXE['ultimaversion'].iloc[0]}."
+            f"Estas usando una version vieja de este aplicativo," +
+            f"por favor actualizar a la version {versionEXE['ultimaversion'].iloc[0]}."
         )
         return alert.exec_()
     try:
@@ -95,14 +95,13 @@ def Login(ui, version, MainWindow):
     if usrLog.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
-        if usr in ("32737943", "30832950", "35896637"):
+        if usr in ("32737943", "30832950", "35896637", "33525149", "32660663"):
             ui.tabPaquetes.setEnabled(True)
         log(ui)
         return MainWindow.setWindowTitle(
-            f"[ SUPER Herramientas REDLES - v.{version} ] - "
-            + f"Bienvenide {usrLog['nombres'].iloc[0]}.{random.choice(redleshello)}"
+            f"[ SUPER Herramientas REDLES - v.{version} ] - " +
+            f"Bienvenide {usrLog['nombres'].iloc[0]}.{random.choice(redleshello)}"
         )
     else:
         return MainWindow.setWindowTitle(
-            f"[ SUPER Herramientas REDLES - v.{version} ] - LOGIN INCORRECTO."
-        )
+            f"[ SUPER Herramientas REDLES - v.{version} ] - LOGIN INCORRECTO.")
