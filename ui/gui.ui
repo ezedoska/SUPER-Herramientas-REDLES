@@ -1557,6 +1557,45 @@ p, li { white-space: pre-wrap; }
                </item>
               </layout>
              </widget>
+             <widget class="QWidget" name="tabPP">
+              <attribute name="title">
+               <string>Cargar PP</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_13">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_8">
+                 <property name="title">
+                  <string>[Subir Anexo_PP]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_25">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="PPanexo">
+                    <property name="text">
+                     <string>Subir PP a la base</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_9">
+                 <property name="title">
+                  <string>[Subir IPP]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_24">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="PPint">
+                    <property name="text">
+                     <string>Subir IPP a la base</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>

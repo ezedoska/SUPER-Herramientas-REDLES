@@ -8,33 +8,11 @@ from PyQt5 import QtWidgets, QtGui
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
-from paquetes import (
-    paquete0,
-    paquete1,
-    paquete2,
-    paquete3,
-    paquete5,
-    paquete8,
-    paquete14,
-    paquete15,
-    somoso,
-)
-from procs import (
-    login,
-    error9,
-    reevaluar,
-    reenviarP0,
-    bajaRetro,
-    forzarP8,
-    cargarADH,
-    asigReso,
-    asigEf,
-    logger,
-    cruces,
-    desasignar,
-    estado,
-    cermi,
-)
+from paquetes import (paquete0, paquete1, paquete2, paquete3, paquete5,
+                      paquete8, paquete14, paquete15, somoso)
+from procs import (login, error9, reevaluar, reenviarP0, bajaRetro, forzarP8,
+                   cargarADH, asigReso, asigEf, logger, cruces, desasignar,
+                   estado, cermi, PP)
 
 if __name__ == "__main__":
     """[summary]"""
@@ -66,13 +44,13 @@ if __name__ == "__main__":
     )
 
     MainWindow.show()
-    ui.mainGroup.setEnabled(False)
+    ui.mainGroup.setEnabled(True)
     MainWindow.setWindowIcon(QtGui.QIcon("icon.ico"))
     ui.Main.setPixmap(QtGui.QPixmap("Main.png"))
     pixmap = QtGui.QPixmap("Main.png")
     pixmap2 = pixmap.scaledToWidth(16)
     pixmap3 = pixmap.scaledToHeight(16)
-    version = "2.20210319"
+    version = "2.20211116"
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))
@@ -96,7 +74,8 @@ if __name__ == "__main__":
     ui.crucePrecariosBoton.clicked.connect(lambda: cermi.Cermi_Listado(ui))
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
     ui.paquetesBoton.clicked.connect(lambda: estado.Paquetes(ui))
-
+    ui.PPanexo.clicked.connect(lambda: PP.Anexo(ui))
+    ui.PPint.clicked.connect(lambda: PP.Int(ui))
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
     sys.exit(app.exec_())

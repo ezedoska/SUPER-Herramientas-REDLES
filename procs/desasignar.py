@@ -17,7 +17,7 @@ def Desasignado(ui):
     delete1 = f"""DELETE 
                   FROM {tipoForm}sExp{tipoExp}
                   WHERE id_{tipoForm} = {form} and nroExpediente= {exp} """
-    delete2 = f"""SELECT 
+    delete2 = f"""DELETE 
                   FROM cajasArchivo
                   WHERE nroRedles = {form} 
                   and nroExpediente= {exp} 
@@ -25,18 +25,14 @@ def Desasignado(ui):
     try:
         with engine.begin() as connection:
             result1 = connection.execute(delete1)
-        if result1.rowcount == 0:
-            return logB(ui, f"No se encontro formulario con ese expediente.", 2)
-        logB(ui, f"Expediente desasignado.", 1)
-
-        with engine.begin() as connection:
             result2 = connection.execute(delete2)
-        if result2.rowcount == 0:
+        if result2.rowcount == 0 and result1.rowcount == 0:
             return logB(
-                ui, f"No se encontro caja con ese form/expediente, verificar.", 2, 0
-            )
-        logB(ui, f"Caja desasignada.", 1, 0)
+                ui,
+                f"Verifique nro de formulario, expediente, tipo de exp, y tipo de efector .",
+                3, 1)
         log(ui)
-        return logB(ui, f"Se desasigno correctamente E:{exp} del F:{exp}.", 1, 0)
+        return logB(ui, f"Se desasigno correctamente E:{exp} del F:{form}.", 1,
+                    0)
     except Exception as e:
         return logB(ui, f"Error desasignando el formulario: {str(e)}", 3)

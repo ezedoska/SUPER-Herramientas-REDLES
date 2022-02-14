@@ -15,7 +15,7 @@ def Error_9(ui):
         checkE9 = pd.read_sql_query(
             f"""SELECT id_{tipo} 
                 FROM {tipo}s_paquete_4 
-                WHERE id_{tipo}={form} and cod_error=9""",
+                WHERE id_{tipo}={form} and cod_error in (9,98,3)""",
             con=engine,
         )
         if checkE9.empty:
@@ -23,11 +23,9 @@ def Error_9(ui):
         else:
             with engine.begin() as connection:
                 try:
-                    connection.execute(
-                        f"""INSERT 
+                    connection.execute(f"""INSERT 
                             INTO Paquete_4_error9_Log (TipoEf, NroFormulario, Fecha, Usuario) 
-                            VALUES('{tipo}',{form},getdate(),{userdni})"""
-                    )
+                            VALUES('{tipo}',{form},getdate(),{userdni})""")
                 except Exception as e:
                     return logB(
                         ui,
@@ -35,11 +33,9 @@ def Error_9(ui):
                         3,
                     )
                 try:
-                    connection.execute(
-                        f"""DELETE 
+                    connection.execute(f"""DELETE 
                             FROM {tipo}s_paquete_4 
-                            WHERE id_{tipo}={form} and cod_error=9"""
-                    )
+                            WHERE id_{tipo}={form} and cod_error=9""")
                 except Exception as e:
                     return logB(
                         ui,

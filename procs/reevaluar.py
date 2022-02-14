@@ -12,10 +12,11 @@ def Reevaluar(ui):
     tipoDict = {"Persona": 1, "Asociado": 3, "Integrante": 5}
     if form in ["", "0"]:
         return logB(ui, "El campo formulario no puede estar vacio.", 3)
+    print('1')
     try:
         check = pd.read_sql_query(
-            f"""SELECT evaluado 
-                FROM [adm_efectores].[dbo].[PadronEfectores] 
+            f"""SELECT evaluado
+                FROM [adm_efectores].[dbo].[PadronEfectores]
                 WHERE nroformulario={form} and tipoef={tipoDict[tipo]}""",
             con=engine,
         )
@@ -24,18 +25,21 @@ def Reevaluar(ui):
         elif check["evaluado"].iloc[0] == 2:
             try:
                 with engine.begin() as connection:
-                    connection.execute(
-                        f"""exec [dbo].[ReevaluarEXE] 
+                    connection.execute(f"""exec [dbo].[ReevaluarEXE] 
                         @tipo={tipoDict[tipo]},@formulario={form},@operador={userdni}"""
-                    )
+                                       )
+                log(ui, form)
+                return logB(ui, f"[{form}] Fue evaluado a positivo.", 1)
             except Exception as e:
-                return logB(ui, f"[{form}] Hubo un error al reevaluar: {str(e)}", 3)
-            log(ui, form)
-            return logB(ui, f"[{form}] Fue evaluado a positivo.", 1)
+                return logB(ui,
+                            f"[{form}] Hubo un error al reevaluar: {str(e)}",
+                            3)
+
         else:
             return logB(ui, f"[{form}] No tiene evaluacion negativa.", 2)
     except Exception as e:
-        return logB(ui, f"[{form}] Hubo un error chequeando estado: {str(e)}", 3)
+        return logB(ui, f"[{form}] Hubo un error chequeando estado: {str(e)}",
+                    3)
 
 
 def Deshacer_Reevaluar(ui):
@@ -65,13 +69,14 @@ def Deshacer_Reevaluar(ui):
         else:
             try:
                 with engine.begin() as connection:
-                    connection.execute(
-                        f"""exec [dbo].[UndoReevaluarEXE] 
+                    connection.execute(f"""exec [dbo].[UndoReevaluarEXE] 
                         @tipo={tipoDict[tipo]},@formulario={form},@operador={userdni}"""
-                    )
+                                       )
             except Exception as e:
-                return logB(ui, f"[{form}] Hubo un error reevaluando: {str(e)}", 3)
+                return logB(ui,
+                            f"[{form}] Hubo un error reevaluando: {str(e)}", 3)
             log(ui, form)
             return logB(ui, f"[{form}] Se revirtio la evaluacion.", 1)
     except Exception as e:
-        return logB(ui, f"[{form}] Hubo un error chequeando estado: {str(e)}", 3)
+        return logB(ui, f"[{form}] Hubo un error chequeando estado: {str(e)}",
+                    3)

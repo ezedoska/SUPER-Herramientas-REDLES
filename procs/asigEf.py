@@ -8,15 +8,18 @@ from PyQt5 import QtWidgets, QtGui
 def Subir_Excel_Asignacion(ui):
     ui.asigEfTabla.setRowCount(0)
 
-    df = pd.read_excel("asignacion.xlsx")
+    df = pd.read_excel("asignacion.xlsx", engine='openpyxl')
 
     if df.empty:
         return logB(ui, "El excel esta vacio", 2)
 
     if len(df.Expediente.unique()) > 1:
-        return logB(ui, "Hay mas de un n° de expediente en la columna Expediente", 2)
+        return logB(ui,
+                    "Hay mas de un n° de expediente en la columna Expediente",
+                    2)
     if len(df.Dependencia.unique()) > 1:
-        return logB(ui, "Hay mas de una dependencia en la columna Dependencia", 2)
+        return logB(ui, "Hay mas de una dependencia en la columna Dependencia",
+                    2)
     if len(df.Caja.unique()) > 1:
         return logB(ui, "Hay mas de un n° de caja en la columna Caja", 2)
 
@@ -25,9 +28,11 @@ def Subir_Excel_Asignacion(ui):
     try:
         with engine.begin() as connection:
             connection.execute("DELETE FROM Asignacion")
-        df.to_sql(
-            "Asignacion", con=engine, if_exists="append", index=False, schema="dbo"
-        )
+        df.to_sql("Asignacion",
+                  con=engine,
+                  if_exists="append",
+                  index=False,
+                  schema="dbo")
         ui.asigEfTipo.setEnabled(True)
         ui.asigEfBoton.setEnabled(True)
         ui.asigEfExcel.setEnabled(False)
@@ -47,12 +52,10 @@ def Asignado_Efectores(ui):
 
     try:
         with engine.begin() as connection:
-            connection.execute(
-                f"""EXEC  [AsignarExpedientesGDE]
+            connection.execute(f"""EXEC  [AsignarExpedientesGDE]
                 @tipo = {tipo},
                 @tipoexp = {tipoexp},
-                @user = {userdni}"""
-            )
+                @user = {userdni}""")
     except Exception as e:
         return logB(ui, f"Hubo un error en la asignacion: {str(e)}", 3)
 
@@ -74,6 +77,5 @@ def Asignado_Efectores(ui):
         return logB(ui, f"El asignado termino sin errores.", 1)
     MostrarEnTabla(result, ui.asigEfTabla)
     ui.asigEfTabla.horizontalHeader().setSectionResizeMode(
-        QtWidgets.QHeaderView.ResizeToContents
-    )
+        QtWidgets.QHeaderView.ResizeToContents)
     return logB(ui, f"El asignado termino con errores.", 1)
