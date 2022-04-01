@@ -12,7 +12,7 @@ from paquetes import (paquete0, paquete1, paquete2, paquete3, paquete5,
                       paquete8, paquete14, paquete15, somoso)
 from procs import (login, error9, reevaluar, reenviarP0, bajaRetro, forzarP8,
                    cargarADH, asigReso, asigEf, logger, cruces, desasignar,
-                   estado, cermi, PP)
+                   estado, cermi, PP, ForzarP3)
 
 if __name__ == "__main__":
     """[summary]"""
@@ -74,8 +74,10 @@ if __name__ == "__main__":
     ui.crucePrecariosBoton.clicked.connect(lambda: cermi.Cermi_Listado(ui))
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
     ui.paquetesBoton.clicked.connect(lambda: estado.Paquetes(ui))
-    ui.PPanexo.clicked.connect(lambda: PP.Anexo(ui))
-    ui.PPint.clicked.connect(lambda: PP.Int(ui))
+    ui.FP3Boton.clicked.connect(lambda: ForzarP3.Forzar_p3(ui))
+    ui.MCBoton.clicked.connect(lambda: ForzarP3.Cermi_mod(ui))
+    # ui.PPanexo.clicked.connect(lambda: PP.Anexo(ui))
+    # ui.PPint.clicked.connect(lambda: PP.Int(ui))
     ui.menuButtonSalir.clicked.connect(MainWindow.close)
 
     sys.exit(app.exec_())

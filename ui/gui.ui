@@ -90,6 +90,105 @@
       </layout>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="loginGBox">
+      <property name="minimumSize">
+       <size>
+        <width>175</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>175</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>[Login]</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="2" column="0">
+        <widget class="QLineEdit" name="loginPwBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>CONTRASEÑA</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="loginUsrBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="inputMask">
+          <string>99999999</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Normal</enum>
+         </property>
+         <property name="placeholderText">
+          <string>USUARIO</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="loginButton">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Ingresar</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="1" column="0" colspan="3">
      <widget class="QGroupBox" name="mainGroup">
       <property name="enabled">
@@ -254,7 +353,7 @@ p, li { white-space: pre-wrap; }
            <string>Formularios</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="1">
+           <item row="0" column="0">
             <widget class="QTabWidget" name="tabForm">
              <property name="enabled">
               <bool>true</bool>
@@ -391,16 +490,123 @@ p, li { white-space: pre-wrap; }
                <string>Precarios</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_16">
-               <item row="0" column="0">
-                <widget class="QGroupBox" name="groupBox_3">
-                 <property name="title">
-                  <string>[Cruce Precarios]</string>
+               <item row="1" column="0">
+                <widget class="QTabWidget" name="tabWidget_2">
+                 <property name="currentIndex">
+                  <number>0</number>
                  </property>
-                 <layout class="QFormLayout" name="formLayout_5">
-                  <item row="0" column="0" colspan="2">
-                   <widget class="QPushButton" name="crucePrecariosBoton">
+                 <widget class="QWidget" name="tab_7">
+                  <attribute name="title">
+                   <string>Cruces-Subida</string>
+                  </attribute>
+                  <layout class="QFormLayout" name="formLayout_10">
+                   <item row="0" column="0" colspan="2">
+                    <widget class="QGroupBox" name="groupBox_3">
+                     <property name="title">
+                      <string>[Cruce Precarios]</string>
+                     </property>
+                     <layout class="QFormLayout" name="formLayout_5">
+                      <item row="0" column="0" colspan="2">
+                       <widget class="QPushButton" name="crucePrecariosBoton">
+                        <property name="text">
+                         <string>Generar excel</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="2">
+                    <widget class="QGroupBox" name="groupBox_4">
+                     <property name="title">
+                      <string>[Subida Cermi]</string>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_17">
+                      <item row="1" column="1">
+                       <widget class="QTableWidget" name="cermiTabla"/>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QPushButton" name="cermiBoton">
+                        <property name="text">
+                         <string>Cargar excel</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tab_8">
+                  <attribute name="title">
+                   <string>Mod CERMI</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_13">
+                   <item row="0" column="0">
+                    <widget class="QGroupBox" name="groupBox_12">
+                     <property name="title">
+                      <string>Modificar CERMI</string>
+                     </property>
+                     <layout class="QFormLayout" name="formLayout_13">
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_37">
+                        <property name="text">
+                         <string>Form:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QLineEdit" name="MCForm">
+                        <property name="inputMask">
+                         <string>99999999</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="label_38">
+                        <property name="text">
+                         <string>Cermi:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QLineEdit" name="MCCermi">
+                        <property name="inputMask">
+                         <string>99999999</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0" colspan="2">
+                       <widget class="QPushButton" name="MCBoton">
+                        <property name="text">
+                         <string>Modificar</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_5">
+              <attribute name="title">
+               <string>Proyectos</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_26">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_8">
+                 <property name="title">
+                  <string>[Subir Anexo_PP]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_25">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="PPanexo">
                     <property name="text">
-                     <string>Generar excel</string>
+                     <string>Subir PP a la base</string>
                     </property>
                    </widget>
                   </item>
@@ -408,18 +614,125 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="1" column="0">
-                <widget class="QGroupBox" name="groupBox_4">
+                <widget class="QGroupBox" name="groupBox_9">
                  <property name="title">
-                  <string>[Subida Cermi]</string>
+                  <string>[Subir IPP]</string>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_17">
-                  <item row="1" column="1">
-                   <widget class="QTableWidget" name="cermiTabla"/>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QPushButton" name="cermiBoton">
+                 <layout class="QGridLayout" name="gridLayout_24">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="PPint">
                     <property name="text">
-                     <string>Cargar excel</string>
+                     <string>Subir IPP a la base</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_6">
+              <attribute name="title">
+               <string>-1 Sintys</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_9">
+               <item row="1" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_11">
+                 <property name="title">
+                  <string>[Forzar P3]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_28">
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_36">
+                    <property name="text">
+                     <string>Nro Documento:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_35">
+                    <property name="text">
+                     <string>Lote:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_33">
+                    <property name="text">
+                     <string>Tipo:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QComboBox" name="FP3Tipo">
+                    <item>
+                     <property name="text">
+                      <string>Persona</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Asociado</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Integrante</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLineEdit" name="FP3Form">
+                    <property name="inputMask">
+                     <string>99999999</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_34">
+                    <property name="text">
+                     <string>Form:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLineEdit" name="FP3Lote">
+                    <property name="inputMask">
+                     <string>9999</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLineEdit" name="FP3Dni">
+                    <property name="inputMask">
+                     <string>99999999</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0" colspan="3">
+                   <widget class="QPushButton" name="FP3Boton">
+                    <property name="text">
+                     <string>Cargar P3</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_10">
+                 <property name="title">
+                  <string>[AVISO]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_27">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_32">
+                    <property name="text">
+                     <string>SOLAMENTE FUNCIONA SI LA PERSONA NO TIENE UN CAIDO EN TRAMITE</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
                     </property>
                    </widget>
                   </item>
@@ -449,7 +762,7 @@ p, li { white-space: pre-wrap; }
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <property name="usesScrollButtons">
               <bool>false</bool>
@@ -1142,7 +1455,7 @@ p, li { white-space: pre-wrap; }
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>3</number>
              </property>
              <property name="usesScrollButtons">
               <bool>false</bool>
@@ -1557,45 +1870,6 @@ p, li { white-space: pre-wrap; }
                </item>
               </layout>
              </widget>
-             <widget class="QWidget" name="tabPP">
-              <attribute name="title">
-               <string>Cargar PP</string>
-              </attribute>
-              <layout class="QGridLayout" name="gridLayout_13">
-               <item row="0" column="0">
-                <widget class="QGroupBox" name="groupBox_8">
-                 <property name="title">
-                  <string>[Subir Anexo_PP]</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_25">
-                  <item row="0" column="0">
-                   <widget class="QPushButton" name="PPanexo">
-                    <property name="text">
-                     <string>Subir PP a la base</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QGroupBox" name="groupBox_9">
-                 <property name="title">
-                  <string>[Subir IPP]</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_24">
-                  <item row="0" column="0">
-                   <widget class="QPushButton" name="PPint">
-                    <property name="text">
-                     <string>Subir IPP a la base</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
             </widget>
            </item>
           </layout>
@@ -1608,7 +1882,7 @@ p, li { white-space: pre-wrap; }
            <item row="0" column="0">
             <widget class="QTabWidget" name="tabWidget">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="tab_2">
               <attribute name="title">
@@ -1699,105 +1973,6 @@ p, li { white-space: pre-wrap; }
       </layout>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QGroupBox" name="loginGBox">
-      <property name="minimumSize">
-       <size>
-        <width>175</width>
-        <height>80</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>175</width>
-        <height>80</height>
-       </size>
-      </property>
-      <property name="title">
-       <string>[Login]</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="2" column="0">
-        <widget class="QLineEdit" name="loginPwBox">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
-         </property>
-         <property name="placeholderText">
-          <string>CONTRASEÑA</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLineEdit" name="loginUsrBox">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="inputMask">
-          <string>99999999</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Normal</enum>
-         </property>
-         <property name="placeholderText">
-          <string>USUARIO</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="loginButton">
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>0</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="acceptDrops">
-          <bool>false</bool>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Ingresar</string>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>false</bool>
-         </property>
-         <property name="default">
-          <bool>false</bool>
-         </property>
-         <property name="flat">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
    </layout>
   </widget>
  </widget>
@@ -1807,7 +1982,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>loginButton</tabstop>
   <tabstop>menuButtonSalir</tabstop>
   <tabstop>menuButtonCU</tabstop>
-  <tabstop>tabForm</tabstop>
   <tabstop>E9Form</tabstop>
   <tabstop>E9Tipo</tabstop>
   <tabstop>E9Boton</tabstop>
