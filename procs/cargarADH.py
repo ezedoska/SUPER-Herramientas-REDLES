@@ -19,7 +19,7 @@ def Cargar_ADH(ui):
     nombre = ui.cadhNombre.text()
     dni = ui.cadhDNI.text()
     parentezco = ui.cadhParentezco.currentText()
-    parent = {"Hijo": 3, "Conyuge": 2}
+    parent = {"Hijo": 3, "Conyugue": 2}
 
     if cuit in ["", "0"] or len(cuit) < 11:
         return logB(ui, f"Campo CUIT son 11 digitos.", 3)
@@ -32,7 +32,8 @@ def Cargar_ADH(ui):
 
     try:
         with engine.begin() as connection:
-            connection.execute(f"""EXEC [dbo].[proc_P14_03_ADHReclamos]
+            connection.execute(f"""
+                    EXEC [dbo].[proc_P14_03_ADHReclamos]
                     @CUITTitular = '{cuit}',
                     @Movimiento_A_B ='{mov}',
                     @Apellido_y_nombre = '{apellido} {nombre}',

@@ -12,7 +12,6 @@ def Reevaluar(ui):
     tipoDict = {"Persona": 1, "Asociado": 3, "Integrante": 5}
     if form in ["", "0"]:
         return logB(ui, "El campo formulario no puede estar vacio.", 3)
-    print('1')
     try:
         check = pd.read_sql_query(
             f"""SELECT evaluado
