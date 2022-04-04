@@ -604,7 +604,7 @@ p, li { white-space: pre-wrap; }
                  </property>
                  <layout class="QGridLayout" name="gridLayout_25">
                   <item row="0" column="0">
-                   <widget class="QPushButton" name="PPanexo">
+                   <widget class="QPushButton" name="PPAnexo">
                     <property name="text">
                      <string>Subir PP a la base</string>
                     </property>
@@ -620,9 +620,145 @@ p, li { white-space: pre-wrap; }
                  </property>
                  <layout class="QGridLayout" name="gridLayout_24">
                   <item row="0" column="0">
-                   <widget class="QPushButton" name="PPint">
+                   <widget class="QPushButton" name="PPInt">
                     <property name="text">
                      <string>Subir IPP a la base</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QGroupBox" name="groupBox_13">
+                 <property name="title">
+                  <string>[Asignar exp a PP]</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_30">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="asigresoLabelR_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Formulario</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>asigReReso</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="asigresoLabelE_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Expediente</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>asigReExp</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="asigresoLabelDE_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Dependencia del Exp</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>asigReDependenciaE</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="PPDepExp">
+                    <item>
+                     <property name="text">
+                      <string>DRNEDLES#MSYDS</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>DRNEDLES#MDS</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="asigresoLabelR_3">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Caja</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>asigReReso</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QPushButton" name="PPBoton">
+                    <property name="text">
+                     <string>Asignar</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1" colspan="2">
+                   <widget class="QLineEdit" name="PPCaja">
+                    <property name="inputMask">
+                     <string>9999</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Nro de caja</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1" colspan="2">
+                   <widget class="QLineEdit" name="PPExp">
+                    <property name="inputMask">
+                     <string>9999999999999</string>
+                    </property>
+                    <property name="maxLength">
+                     <number>13</number>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Año + Numero</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLineEdit" name="PPForm">
+                    <property name="inputMask">
+                     <string>99999999</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Formulario</string>
                     </property>
                    </widget>
                   </item>
@@ -1219,8 +1355,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>173</width>
-                    <height>41</height>
+                    <width>409</width>
+                    <height>178</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1241,8 +1377,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>215</width>
-                    <height>67</height>
+                    <width>409</width>
+                    <height>178</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1295,8 +1431,8 @@ p, li { white-space: pre-wrap; }
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>345</width>
-                    <height>93</height>
+                    <width>409</width>
+                    <height>178</height>
                    </rect>
                   </property>
                   <attribute name="label">

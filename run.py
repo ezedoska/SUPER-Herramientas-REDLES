@@ -75,7 +75,10 @@ if __name__ == "__main__":
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
     ui.paquetesBoton.clicked.connect(lambda: estado.Paquetes(ui))
     ui.FP3Boton.clicked.connect(lambda: ForzarP3.Forzar_p3(ui))
-    ui.MCBoton.clicked.connect(lambda: ForzarP3.Cermi_mod(ui))
+    ui.PPInt.clicked.connect(lambda: PP.Int(ui))
+    ui.PPAnexo.clicked.connect(lambda: PP.Anexo(ui))
+    ui.PPBoton.clicked.connect(lambda: PP.AsigPP(ui))
+
     # ui.PPanexo.clicked.connect(lambda: PP.Anexo(ui))
     # ui.PPint.clicked.connect(lambda: PP.Int(ui))
     ui.menuButtonSalir.clicked.connect(MainWindow.close)

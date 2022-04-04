@@ -25,13 +25,13 @@ def Anexo(ui):
 
 
 def Int(ui):
+
     try:
         df = pd.read_excel("IPP.xlsx", engine='openpyxl')
+        if df.empty:
+            return logB(ui, "El excel esta vacio", 2)
     except Exception as e:
         return logB(ui, f"Hubo un error: {str(e)}", 3)
-    if df.empty:
-        return logB(ui, "El excel esta vacio", 2)
-
     try:
         df.to_sql("ProyectosIntegrantes",
                   con=engine,
@@ -39,5 +39,22 @@ def Int(ui):
                   index=False,
                   schema="dbo")
         return logB(ui, f"El IPP se cargo correctamente.", 1)
+    except Exception as e:
+        return logB(ui, f"Hubo un error: {str(e)}", 3)
+
+
+def AsigPP(ui):
+    form = ui.PPForm.text()
+    exp = ui.PPExp.text()
+    caja = ui.PPCaja.text()
+    dep = ui.PPDepExp.currentText()
+    try:
+        with engine.begin() as connection:
+            connection.execute(f"""exec [dbo].[asignarexpPP] 
+                @form={form},
+                @exp={exp},
+                @caja={caja},
+                @dep={dep}""")
+        return logB(ui, f"El PP se asigno correctamente.", 1)
     except Exception as e:
         return logB(ui, f"Hubo un error: {str(e)}", 3)
