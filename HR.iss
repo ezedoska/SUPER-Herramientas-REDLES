@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Super Herramientas REDLES"
-#define MyAppVersion "2.20211116"
+#define MyAppVersion "2.20220404"
 #define MyAppPublisher "Doskapps"
 #define MyAppURL "https://registroefectores.desarrollosocial.gob.ar"
 #define MyAppExeName "run.exe"
@@ -48,6 +48,8 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 Name: "{autodesktop}\asignacion"; Filename: "{app}\asignacion.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\cruceDNI"; Filename: "{app}\cruceDNI.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\cruceFORM"; Filename: "{app}\cruceFORM.xlsx"; Tasks: desktopicon
+Name: "{autodesktop}\anexo_pp"; Filename: "{app}\anexo_pp.xlsx"; Tasks: desktopicon
+Name: "{autodesktop}\ipp"; Filename: "{app}\IPP.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\Codigos-Caido y Negativos"; Filename: "{app}\codigos.txt"; Tasks: desktopicon
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent

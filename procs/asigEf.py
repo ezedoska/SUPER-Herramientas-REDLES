@@ -3,12 +3,16 @@ import pandas as pd
 from dateutil import parser
 from procs.db import engine
 from PyQt5 import QtWidgets, QtGui
+from rich import console
+from procs.console import console
 
 
 def Subir_Excel_Asignacion(ui):
     ui.asigEfTabla.setRowCount(0)
 
-    df = pd.read_excel("asignacion.xlsx", engine='openpyxl')
+    df1 = pd.read_excel("asignacion.xlsx", engine='openpyxl')
+    df = df1.dropna(how='any', axis=0, subset=['Form', 'TipoEf', 'Expediente', 'Dependencia',
+                    'Caja'])
 
     if df.empty:
         return logB(ui, "El excel esta vacio", 2)
@@ -24,7 +28,7 @@ def Subir_Excel_Asignacion(ui):
         return logB(ui, "Hay mas de un n° de caja en la columna Caja", 2)
 
     exp = df.iloc[0, 2]
-
+    console.log("Locals", log_locals=True)
     try:
         with engine.begin() as connection:
             connection.execute("DELETE FROM Asignacion")
@@ -49,7 +53,7 @@ def Asignado_Efectores(ui):
 
     tipo = tipoasignacion[0] + tipoasignacion[1]
     tipoexp = tipoasignacion[2]
-
+    console.log("Locals", log_locals=True)
     try:
         with engine.begin() as connection:
             connection.execute(f"""EXEC  [AsignarExpedientesGDE]
