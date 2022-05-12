@@ -7,7 +7,7 @@ import os
 
 
 def Cruce_Estado_DNI(ui):
-    df = pd.read_excel("cruceDNI.xlsx")
+    df = pd.read_excel("cruceDNI.xlsx", engine='openpyxl')
     try:
         df.to_sql("##cruce",
                   con=engine,

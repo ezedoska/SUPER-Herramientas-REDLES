@@ -67,25 +67,25 @@ def Login(ui, version, MainWindow):
     #     )
     usr = ui.loginUsrBox.text()
     pwd = ui.loginPwBox.text()
-    try:
-        versionEXE = pd.read_sql_query(
-            f"""SELECT ultimaversion 
-                FROM [adm_efectores].[SQLemore].[ultimaversionExe]""",
-            con=engine,
-        )
-    except Exception as e:
-        return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
-    if versionEXE["ultimaversion"].iloc[0] != version:
-        alert = QtWidgets.QMessageBox()
-        alert.setWindowTitle("ERROR")
-        alert.setText(
-            f"Estas usando una version vieja de este aplicativo," +
-            f"por favor actualizar a la version {versionEXE['ultimaversion'].iloc[0]}."
-        )
-        return alert.exec_()
+    # try:
+    #     versionEXE = pd.read_sql_query(
+    #         f"""SELECT ultimaversion
+    #             FROM [adm_efectores].[SQLemore].[ultimaversionExe]""",
+    #         con=engine,
+    #     )
+    # except Exception as e:
+    #     return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
+    # if versionEXE["ultimaversion"].iloc[0] != version:
+    #     alert = QtWidgets.QMessageBox()
+    #     alert.setWindowTitle("ERROR")
+    #     alert.setText(
+    #         f"Estas usando una version vieja de este aplicativo," +
+    #         f"por favor actualizar a la version {versionEXE['ultimaversion'].iloc[0]}."
+    #     )
+    #     return alert.exec_()
     try:
         usrLog = pd.read_sql_query(
-            f"""SELECT nombres
+            f"""SELECT nombres,observaciones
                                          FROM operadores
                                          WHERE ndocumento={usr} and palabraclave='{pwd}'""",
             con=engine,
@@ -95,8 +95,11 @@ def Login(ui, version, MainWindow):
     if usrLog.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
-        if usr in ("32737943", "30832950", "35896637", "33525149", "32660663"):
+        print(str(usrLog['observaciones'].iloc[0]))
+        if '(SHR)' in str(usrLog['observaciones'].iloc[0]):
             ui.tabPaquetes.setEnabled(True)
+        else:
+            ui.tabPaquetes.setEnabled(False)
         log(ui)
         return MainWindow.setWindowTitle(
             f"[ SUPER Herramientas REDLES - v.{version} ] - " +
