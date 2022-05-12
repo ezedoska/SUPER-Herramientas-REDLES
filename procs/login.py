@@ -67,22 +67,22 @@ def Login(ui, version, MainWindow):
     #     )
     usr = ui.loginUsrBox.text()
     pwd = ui.loginPwBox.text()
-    # try:
-    #     versionEXE = pd.read_sql_query(
-    #         f"""SELECT ultimaversion
-    #             FROM [adm_efectores].[SQLemore].[ultimaversionExe]""",
-    #         con=engine,
-    #     )
-    # except Exception as e:
-    #     return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
-    # if versionEXE["ultimaversion"].iloc[0] != version:
-    #     alert = QtWidgets.QMessageBox()
-    #     alert.setWindowTitle("ERROR")
-    #     alert.setText(
-    #         f"Estas usando una version vieja de este aplicativo," +
-    #         f"por favor actualizar a la version {versionEXE['ultimaversion'].iloc[0]}."
-    #     )
-    #     return alert.exec_()
+    try:
+        versionEXE = pd.read_sql_query(
+            f"""SELECT ultimaversion
+                FROM [adm_efectores].[SQLemore].[ultimaversionExe]""",
+            con=engine,
+        )
+    except Exception as e:
+        return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
+    if versionEXE["ultimaversion"].iloc[0] != version:
+        alert = QtWidgets.QMessageBox()
+        alert.setWindowTitle("ERROR")
+        alert.setText(
+            f"Estas usando una version vieja de este aplicativo," +
+            f"por favor actualizar a la version {versionEXE['ultimaversion'].iloc[0]}."
+        )
+        return alert.exec_()
     try:
         usrLog = pd.read_sql_query(
             f"""SELECT nombres,observaciones
@@ -95,8 +95,8 @@ def Login(ui, version, MainWindow):
     if usrLog.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
-        print(str(usrLog['observaciones'].iloc[0]))
-        if '(SHR)' in str(usrLog['observaciones'].iloc[0]):
+        # print(str(usrLog['Observaciones'].iloc[0]))
+        if '(SHR)' in str(usrLog['Observaciones'].iloc[0]):
             ui.tabPaquetes.setEnabled(True)
         else:
             ui.tabPaquetes.setEnabled(False)

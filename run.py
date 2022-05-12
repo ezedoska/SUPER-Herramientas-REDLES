@@ -13,10 +13,11 @@ from paquetes import (paquete0, paquete1, paquete2, paquete3, paquete5,
 from procs import (login, error9, reevaluar, reenviarP0, bajaRetro, forzarP8,
                    cargarADH, asigReso, asigEf, logger, cruces, desasignar,
                    estado, cermi, PP, ForzarP3)
+from rich.console import Console
 
 if __name__ == "__main__":
     """[summary]"""
-
+    console = Console()
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle("fusion")
     MainWindow = QtWidgets.QMainWindow()
@@ -50,7 +51,7 @@ if __name__ == "__main__":
     pixmap = QtGui.QPixmap("Main.png")
     pixmap2 = pixmap.scaledToWidth(16)
     pixmap3 = pixmap.scaledToHeight(16)
-    version = "2.20211116"
+    version = "2.20220404"
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))

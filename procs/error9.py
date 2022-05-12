@@ -8,9 +8,6 @@ def Error_9(ui):
     form = ui.E9Form.text()
     if form in ["", "0"]:
         return logB(ui, f"El campo FORMULARIO no peude estar vacio.", 3)
-    userdni = ui.loginUsrBox.text()
-    if userdni == "":
-        userdni = 32737943
     try:
         checkE9 = pd.read_sql_query(
             f"""SELECT id_{tipo} 

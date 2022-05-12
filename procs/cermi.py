@@ -11,15 +11,11 @@ def Cermi_Subida(ui):
     ui.cermiTabla.setRowCount(0)
     ui.estadoTabla.clear()
 
-    df = pd.read_excel("cermi.xlsx")
+    df1 = pd.read_excel("cermi.xlsx")
+    df = df1.dropna(how='any', axis=0, subset=['nroformulario', 'vencimientoCermi', 'nromigracion', 'CUIL',
+                    'idTipoResidencia', 'Email', 'IdTipoEmail'])
 
-    # if len(df.Expediente.unique()) > 1:
-    #     return logB(ui, "Hay mas de un n° de expediente en la columna Expediente", 2)
-    # if len(df.Dependencia.unique()) > 1:
-    #     return logB(ui, "Hay mas de una dependencia en la columna Dependencia", 2)
-    # if len(df.Caja.unique()) > 1:
-    #     return logB(ui, "Hay mas de un n° de caja en la columna Caja", 2)
-
+    console.log("Locals", log_locals=True)
     try:
         with engine.begin() as connection:
             connection.execute("DELETE FROM proc_cermi")
