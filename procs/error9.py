@@ -6,6 +6,7 @@ from procs.db import engine
 def Error_9(ui):
     tipo = ui.E9Tipo.currentText()
     form = ui.E9Form.text()
+    userdni = ui.loginUsrBox.text()
     if form in ["", "0"]:
         return logB(ui, f"El campo FORMULARIO no peude estar vacio.", 3)
     try:

@@ -7,7 +7,7 @@ import pandas as pd
 from robobrowser import RoboBrowser
 import urllib3
 from procs.logger import log, logB
-
+from procs.console import console
 urllib3.disable_warnings()
 
 
@@ -74,6 +74,7 @@ def Login(ui, version, MainWindow):
             con=engine,
         )
     except Exception as e:
+        
         return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
     if versionEXE["ultimaversion"].iloc[0] != version:
         alert = QtWidgets.QMessageBox()
@@ -90,8 +91,11 @@ def Login(ui, version, MainWindow):
                                          WHERE ndocumento={usr} and palabraclave='{pwd}'""",
             con=engine,
         )
-    except Exception as e:
-        return logB(ui, f"Error leyendo usuario en la base: {str(e)}", 3)
+    except:
+        console.print_exception(show_locals=True)
+        e = console.print_exception(show_locals=True)
+        logB(ui, f"Error leyendo usuario en la base: {str(e)}", 3)
+        return logB(ui,console.print_exception(show_locals=True),3)
     if usrLog.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
