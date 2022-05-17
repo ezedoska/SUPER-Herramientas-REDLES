@@ -61,7 +61,7 @@ def AsigPP(ui):
                 @form={form},
                 @exp={exp},
                 @caja={caja},
-                @dep={dep}""")
+                @dep='{dep}'""")
         return logB(ui, f"El PP se asigno correctamente.", 1)
     except Exception as e:
         return logB(ui, f"Hubo un error: {str(e)}", 3)
