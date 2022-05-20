@@ -100,7 +100,7 @@ def Login(ui, version, MainWindow):
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
         # print(str(usrLog['Observaciones'].iloc[0]))
-        if '(SHR)' in str(usrLog['Observaciones'].iloc[0]):
+        if '(SHR)' in str(usrLog['observaciones'].iloc[0]):
             ui.tabPaquetes.setEnabled(True)
         else:
             ui.tabPaquetes.setEnabled(False)

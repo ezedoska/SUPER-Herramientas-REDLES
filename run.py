@@ -13,7 +13,8 @@ from paquetes import (paquete0, paquete1, paquete2, paquete3, paquete5,
 from procs import (login, error9, reevaluar, reenviarP0, bajaRetro, forzarP8,
                    cargarADH, asigReso, asigEf, logger, cruces, desasignar,
                    estado, cermi, PP, ForzarP3)
-
+from rich.traceback import install
+install(show_locals=True)
 if __name__ == "__main__":
     """[summary]"""
     app = QtWidgets.QApplication(sys.argv)
