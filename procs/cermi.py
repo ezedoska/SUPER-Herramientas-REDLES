@@ -11,11 +11,14 @@ def Cermi_Subida(ui):
     ui.cermiTabla.setRowCount(0)
     ui.estadoTabla.clear()
 
-    df1 = pd.read_excel("cermi.xlsx")
+    df1 = pd.read_excel("cermi.xlsx", engine='openpyxl', dtype=str)
     df = df1.dropna(how='any', axis=0, subset=['nroformulario', 'vencimientoCermi', 'nromigracion', 'CUIL',
-                    'idTipoResidencia', 'Email', 'IdTipoEmail'])
+                                               'idTipoResidencia', 'Email', 'IdTipoEmail'])
 
     console.log("Locals", log_locals=True)
+    if df.empty:
+        return logB(ui, "El excel esta vacio, puede ocurrir que se esten borrando lineas por contener errores, revisar documento", 2)
+
     try:
         with engine.begin() as connection:
             connection.execute("DELETE FROM proc_cermi")

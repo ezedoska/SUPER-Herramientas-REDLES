@@ -50,7 +50,7 @@ if __name__ == "__main__":
     pixmap = QtGui.QPixmap("Main.png")
     pixmap2 = pixmap.scaledToWidth(16)
     pixmap3 = pixmap.scaledToHeight(16)
-    version = "2.20220512"
+    version = "2.20220520"
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))
