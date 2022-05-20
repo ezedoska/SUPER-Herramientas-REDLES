@@ -10,12 +10,12 @@ from procs.console import console
 def Subir_Excel_Asignacion(ui):
     ui.asigEfTabla.setRowCount(0)
 
-    df1 = pd.read_excel("asignacion.xlsx", engine='openpyxl')
+    df1 = pd.read_excel("asignacion.xlsx", engine='openpyxl', dtype=str)
     df = df1.dropna(how='any', axis=0, subset=['Form', 'TipoEf', 'Expediente', 'Dependencia',
-                    'Caja'])
+                                               'Caja'])
 
     if df.empty:
-        return logB(ui, "El excel esta vacio", 2)
+        return logB(ui, "El excel esta vacio, puede ocurrir que se esten borrando lineas por contener errores, revisar documento", 2)
 
     if len(df.Expediente.unique()) > 1:
         return logB(ui,
@@ -27,7 +27,7 @@ def Subir_Excel_Asignacion(ui):
     if len(df.Caja.unique()) > 1:
         return logB(ui, "Hay mas de un n° de caja en la columna Caja", 2)
 
-    exp = df.iloc[0, 2]
+    exp = int(df.iloc[0, 2])
     console.log("Locals", log_locals=True)
     try:
         with engine.begin() as connection:

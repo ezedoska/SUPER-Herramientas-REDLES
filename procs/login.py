@@ -74,7 +74,7 @@ def Login(ui, version, MainWindow):
             con=engine,
         )
     except Exception as e:
-        
+
         return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
     if versionEXE["ultimaversion"].iloc[0] != version:
         alert = QtWidgets.QMessageBox()
@@ -95,12 +95,12 @@ def Login(ui, version, MainWindow):
         console.print_exception(show_locals=True)
         e = console.print_exception(show_locals=True)
         logB(ui, f"Error leyendo usuario en la base: {str(e)}", 3)
-        return logB(ui,console.print_exception(show_locals=True),3)
+        return logB(ui, console.print_exception(show_locals=True), 3)
     if usrLog.empty == False:
         ui.mainGroup.setEnabled(True)
         ui.loginGBox.setEnabled(False)
         # print(str(usrLog['Observaciones'].iloc[0]))
-        if '(SHR)' in str(usrLog['Observaciones'].iloc[0]):
+        if '(SHR)' in str(usrLog['observaciones'].iloc[0]):
             ui.tabPaquetes.setEnabled(True)
         else:
             ui.tabPaquetes.setEnabled(False)
