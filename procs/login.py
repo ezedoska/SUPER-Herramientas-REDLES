@@ -4,7 +4,8 @@ from procs.memes import redleshello
 from procs.db import engine
 import random
 import pandas as pd
-from robobrowser import RoboBrowser
+import os
+#from robobrowser import RoboBrowser
 import urllib3
 from procs.logger import log, logB
 from procs.console import console
@@ -65,6 +66,14 @@ def Login(ui, version, MainWindow):
     #     return MainWindow.setWindowTitle(
     #         f"[ SUPER Herramientas REDLES - v.{version} ] - LOGIN INCORRECTO."
     #     )
+    computer = os.environ['COMPUTERNAME']
+
+    if 'VDM' or 'vdm' in computer:
+        Ip = "192.168.1.40,21433"
+    else:
+        # Ip = "localhost,21433"
+        Ip = "127.0.0.1,21433"
+    
     usr = ui.loginUsrBox.text()
     pwd = ui.loginPwBox.text()
     try:
@@ -75,7 +84,7 @@ def Login(ui, version, MainWindow):
         )
     except Exception as e:
 
-        return logB(ui, f"Error leyendo version en la base: {str(e)}", 3)
+        return logB(ui, f"Error leyendo version en la base{Ip}: {str(e)}", 3)
     if versionEXE["ultimaversion"].iloc[0] != version:
         alert = QtWidgets.QMessageBox()
         alert.setWindowTitle("ERROR")

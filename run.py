@@ -8,8 +8,6 @@ from PyQt5 import QtWidgets, QtGui
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
-from paquetes import (paquete0, paquete1, paquete2, paquete3, paquete5,
-                      paquete8, paquete14, paquete15, somoso)
 from procs import (login, error9, reevaluar, reenviarP0, bajaRetro, forzarP8,
                    cargarADH, asigReso, asigEf, logger, cruces, desasignar,
                    estado, cermi, PP, ForzarP3)

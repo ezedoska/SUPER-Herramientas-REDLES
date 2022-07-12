@@ -5,7 +5,7 @@
 #define MyAppVersion "2.20220520"
 #define MyAppPublisher "Doskapps"
 #define MyAppURL "https://registroefectores.desarrollosocial.gob.ar"
-#define MyAppExeName "run.exe"
+#define MyAppExeName "HerramientasRedles.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -38,8 +38,8 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\run\run.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\run\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\SHR\HerramientasRedles.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\SHR\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -47,6 +47,7 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 Name: "{autodesktop}\asignacion"; Filename: "{app}\asignacion.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\cruceDNI"; Filename: "{app}\cruceDNI.xlsx"; Tasks: desktopicon
+Name: "{autodesktop}\cermi"; Filename: "{app}\cermi.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\cruceFORM"; Filename: "{app}\cruceFORM.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\anexo_pp"; Filename: "{app}\anexo_pp.xlsx"; Tasks: desktopicon
 Name: "{autodesktop}\ipp"; Filename: "{app}\IPP.xlsx"; Tasks: desktopicon
