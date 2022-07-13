@@ -1,0 +1,9 @@
+csvvalidator==1.2
+rich==12.4.4
+robobrowser==0.5.3
+SQLAlchemy==1.3.5
+Werkzeug==0.16.1
+pandas==1.3.5
+pyqt5-tools
+xlrd
+xlsxwriter
