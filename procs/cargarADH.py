@@ -32,7 +32,8 @@ def Cargar_ADH(ui):
 
     try:
         with engine.begin() as connection:
-            connection.execute(f"""
+            connection.execute(
+                f"""
                     EXEC [dbo].[proc_P14_03_ADHReclamos]
                     @CUITTitular = '{cuit}',
                     @Movimiento_A_B ='{mov}',
@@ -42,7 +43,8 @@ def Cargar_ADH(ui):
                     @Periodo_opcional = NULL,
                     @Duplicado_1Sí_0No_opcional = NULL,
                     @Operador_opcional = NULL,
-                    @Ticket_opcional = 0""")
+                    @Ticket_opcional = 0"""
+            )
         log(ui)
         return logB(ui, f"Adherente cargado.", 1)
     except Exception as e:

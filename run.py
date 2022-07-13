@@ -8,10 +8,26 @@ from PyQt5 import QtWidgets, QtGui
 from ui.gui import Ui_MainWindow as Uimw
 from PyQt5.QtGui import QPalette, QColor
 from procs.memes import redlestips
-from procs import (login, error9, reevaluar, reenviarP0, bajaRetro, forzarP8,
-                   cargarADH, asigReso, asigEf, logger, cruces, desasignar,
-                   estado, cermi, PP, ForzarP3)
+from procs import (
+    login,
+    error9,
+    reevaluar,
+    reenviarP0,
+    bajaRetro,
+    forzarP8,
+    cargarADH,
+    asigReso,
+    asigEf,
+    logger,
+    cruces,
+    desasignar,
+    estado,
+    cermi,
+    PP,
+    ForzarP3,
+)
 from rich.traceback import install
+
 install(show_locals=True)
 if __name__ == "__main__":
     """[summary]"""
@@ -52,8 +68,7 @@ if __name__ == "__main__":
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))
-    ui.loginButton.clicked.connect(
-        lambda: login.Login(ui, version, MainWindow))
+    ui.loginButton.clicked.connect(lambda: login.Login(ui, version, MainWindow))
     ui.E9Boton.clicked.connect(lambda: error9.Error_9(ui))
     ui.reevBoton.clicked.connect(lambda: reevaluar.Reevaluar(ui))
     ui.reevUndo.clicked.connect(lambda: reevaluar.Deshacer_Reevaluar(ui))
@@ -62,8 +77,7 @@ if __name__ == "__main__":
     ui.fp8Boton.clicked.connect(lambda: forzarP8.Forzar_P8(ui))
     ui.cadhBoton.clicked.connect(lambda: cargarADH.Cargar_ADH(ui))
     ui.asigReBoton.clicked.connect(lambda: asigReso.Asignar_Resolucion(ui))
-    ui.asigEfCopiar.clicked.connect(
-        lambda: logger.copiar_tabla(ui.asigEfTabla))
+    ui.asigEfCopiar.clicked.connect(lambda: logger.copiar_tabla(ui.asigEfTabla))
     ui.asigEfExcel.clicked.connect(lambda: asigEf.Subir_Excel_Asignacion(ui))
     ui.asigEfBoton.clicked.connect(lambda: asigEf.Asignado_Efectores(ui))
     ui.cruceEstadoBoton.clicked.connect(lambda: cruces.Cruce_Estado_DNI(ui))

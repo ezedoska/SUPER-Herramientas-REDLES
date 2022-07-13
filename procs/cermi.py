@@ -11,22 +11,35 @@ def Cermi_Subida(ui):
     ui.cermiTabla.setRowCount(0)
     ui.estadoTabla.clear()
 
-    df1 = pd.read_excel("cermi.xlsx", engine='openpyxl', dtype=str)
-    df = df1.dropna(how='any', axis=0, subset=['nroformulario', 'vencimientoCermi', 'nromigracion', 'CUIL',
-                                               'idTipoResidencia', 'Email', 'IdTipoEmail'])
+    df1 = pd.read_excel("cermi.xlsx", engine="openpyxl", dtype=str)
+    df = df1.dropna(
+        how="any",
+        axis=0,
+        subset=[
+            "nroformulario",
+            "vencimientoCermi",
+            "nromigracion",
+            "CUIL",
+            "idTipoResidencia",
+            "Email",
+            "IdTipoEmail",
+        ],
+    )
 
     console.log("Locals", log_locals=True)
     if df.empty:
-        return logB(ui, "El excel esta vacio, puede ocurrir que se esten borrando lineas por contener errores, revisar documento", 2)
+        return logB(
+            ui,
+            "El excel esta vacio, puede ocurrir que se esten borrando lineas por contener errores, revisar documento",
+            2,
+        )
 
     try:
         with engine.begin() as connection:
             connection.execute("DELETE FROM proc_cermi")
-        df.to_sql("proc_cermi",
-                  con=engine,
-                  if_exists="append",
-                  index=False,
-                  schema="dbo")
+        df.to_sql(
+            "proc_cermi", con=engine, if_exists="append", index=False, schema="dbo"
+        )
     except Exception as e:
         return logB(ui, f"Hubo un error subiendo el excel: {str(e)}", 3)
 
@@ -49,7 +62,8 @@ def Cermi_Subida(ui):
         return logB(ui, f"La carga CERMI termino sin errores.", 1)
     MostrarEnTabla(result, ui.cermiTabla)
     ui.cermiTabla.horizontalHeader().setSectionResizeMode(
-        QtWidgets.QHeaderView.ResizeToContents)
+        QtWidgets.QHeaderView.ResizeToContents
+    )
     return logB(ui, f"La carga CERMI termino con errores.", 2)
 
 
@@ -60,13 +74,14 @@ def Cermi_Listado(ui):
     df = pd.read_sql_query(script, con=engine)
 
     fechaexcel = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
-    path = os.path.join(os.path.expanduser("~"), "Desktop",
-                        f"Cruce_Precarios-{fechaexcel}")
-    file_name = QtWidgets.QFileDialog.getSaveFileName(ui.tabMain, "Save file",
-                                                      path, ".xlsx")
+    path = os.path.join(
+        os.path.expanduser("~"), "Desktop", f"Cruce_Precarios-{fechaexcel}"
+    )
+    file_name = QtWidgets.QFileDialog.getSaveFileName(
+        ui.tabMain, "Save file", path, ".xlsx"
+    )
     if file_name[0]:
-        writer = pd.ExcelWriter(file_name[0] + file_name[1],
-                                engine="xlsxwriter")
+        writer = pd.ExcelWriter(file_name[0] + file_name[1], engine="xlsxwriter")
         df.to_excel(writer, sheet_name="Estado precarios", encoding="unicode")
         writer.save()
         log(ui)
@@ -86,9 +101,11 @@ def Cermi_mod(ui):
 
     try:
         with engine.begin() as connection:
-            connection.execute(f"""UPDATE DatosExtranjeros
+            connection.execute(
+                f"""UPDATE DatosExtranjeros
                                     SET nromigracion={cermi}
-                                    where nroformulario={form}""")
+                                    where nroformulario={form}"""
+            )
         log(ui)
         return logB(ui, f"[{form}] Se modifico el CERMI a [{cermi}]", 1)
     except Exception as e:

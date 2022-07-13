@@ -27,21 +27,23 @@ def Baja_Retro(ui):
     if form in ["", "0"]:
         return logB(ui, "El campo FORMULARIO no peude estar vacio.", 3)
 
-    #usamos el store de bajas retro
+    # usamos el store de bajas retro
     try:
         with engine.begin() as connection:
-            connection.execute(f"""EXEC [dbo].[HacerBajaRetro]
+            connection.execute(
+                f"""EXEC [dbo].[HacerBajaRetro]
                         @Formulario = {form},
                         @TipoEfector = {tipoDict[tipo]},
                         @Motivo = 2,
                         @DetalleMotivo = N'Baja Retroactiva',
                         @ope = {userdni},
                         @fecha = '{fechaBaja}'
-                    """)
+                    """
+            )
         log(ui, form)
         return logB(
-            ui, f"[{form}] Baja insertada con exito para la fecha {fechaBaja}",
-            1)
+            ui, f"[{form}] Baja insertada con exito para la fecha {fechaBaja}", 1
+        )
     except Exception as e:
         return logB(
             ui,

@@ -20,7 +20,8 @@ def Forzar_P8(ui):
 
     try:
         with engine.begin() as connection:
-            connection.execute(f"""
+            connection.execute(
+                f"""
                     declare @lote int
                     set @lote = (select max(lote) from [{tipo}s_Paquete_8] where tmov='B')
                     INSERT INTO [adm_efectores].[dbo].[{tipo}s_Paquete_8]
@@ -33,7 +34,8 @@ def Forzar_P8(ui):
                         ,'{fechaBaja}'
                         ,@lote
                         ,'B')
-                """)
+                """
+            )
         return logB(ui, f"[{form}] Se inserto el P8.", 1)
     except Exception as e:
         return logB(ui, f"[{form}] Hubo un error: {str(e)}", 3)

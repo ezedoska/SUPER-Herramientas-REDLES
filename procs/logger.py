@@ -11,9 +11,7 @@ import pandas as pd
 def copiar_tabla(table):
     col_count = table.columnCount()
     row_count = table.rowCount()
-    headers = [
-        str(table.horizontalHeaderItem(i).text()) for i in range(col_count)
-    ]
+    headers = [str(table.horizontalHeaderItem(i).text()) for i in range(col_count)]
 
     # df indexing is slow, so use lists
     df_list = []
@@ -21,8 +19,7 @@ def copiar_tabla(table):
         df_list2 = []
         for col in range(col_count):
             table_item = table.item(row, col)
-            df_list2.append(
-                "" if table_item is None else str(table_item.text()))
+            df_list2.append("" if table_item is None else str(table_item.text()))
         df_list.append(df_list2)
 
     df = pd.DataFrame(df_list, columns=headers)
@@ -42,8 +39,8 @@ def MostrarEnTabla(df, table, orientacion=1):
         for row in range(df.shape[0]):
             for col in range(df.shape[1]):
                 table.setItem(
-                    row, col,
-                    QtWidgets.QTableWidgetItem(str(df_array[row, col])))
+                    row, col, QtWidgets.QTableWidgetItem(str(df_array[row, col]))
+                )
         return 0
     table.horizontalHeader().setVisible(False)
     header = table.horizontalHeader()
@@ -55,8 +52,7 @@ def MostrarEnTabla(df, table, orientacion=1):
     df_array = df.values
     for col in range(df.shape[1]):
         for row in range(df.shape[0]):
-            table.setItem(row, col,
-                          QtWidgets.QTableWidgetItem(str(df_array[row, col])))
+            table.setItem(row, col, QtWidgets.QTableWidgetItem(str(df_array[row, col])))
     return 0
 
 
@@ -90,5 +86,6 @@ def logB(ui, mensaje, tipo=0, contitulo=1, size=4):
     procname = inspect.stack()[1][3]
     if contitulo == 1:
         return ui.log.append(
-            f"<h{size}>{icono} {procname}:</h{size}>  {icono} {mensaje}")
+            f"<h{size}>{icono} {procname}:</h{size}>  {icono} {mensaje}"
+        )
     return ui.log.append(f"{icono} {mensaje}")

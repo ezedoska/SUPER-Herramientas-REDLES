@@ -20,11 +20,13 @@ def Forzar_p3(ui):
         return logB(ui, f"El campo NRODOCUMENTO no peude estar vacio.", 3)
     try:
         with engine.begin() as connection:
-            connection.execute(f"""EXEC [SQLemore].[forzar_p3] 
+            connection.execute(
+                f"""EXEC [SQLemore].[forzar_p3] 
                     @tipo={tipoDict[tipo]},
                     @form={form},
                     @lote={lote},
-                    @ndoc={ndoc}""")
+                    @ndoc={ndoc}"""
+            )
             log(ui, form)
             return logB(ui, f"[{form}] Se cargo exitosamente el P3", 1)
     except Exception as e:

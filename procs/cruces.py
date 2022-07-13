@@ -7,13 +7,11 @@ import os
 
 
 def Cruce_Estado_DNI(ui):
-    df = pd.read_excel("cruceDNI.xlsx", engine='openpyxl')
+    df = pd.read_excel("cruceDNI.xlsx", engine="openpyxl")
     try:
-        df.to_sql("##cruce",
-                  con=engine,
-                  if_exists="replace",
-                  index=False,
-                  schema="tempdb")
+        df.to_sql(
+            "##cruce", con=engine, if_exists="replace", index=False, schema="tempdb"
+        )
     except Exception as e:
         return logB(ui, f"Error subiendo a tabla temporal: {str(e)}", 3)
     logB(ui, f"Excel cargado", 1)
@@ -80,13 +78,14 @@ def Cruce_Estado_DNI(ui):
     fechaexcel = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
 
     df = pd.read_sql_query(script, con=engine)
-    path = os.path.join(os.path.expanduser("~"), "Desktop",
-                        f"Cruce_REDLES-{fechaexcel}")
-    file_name = QtWidgets.QFileDialog.getSaveFileName(ui.tabMain, "Save file",
-                                                      path, ".xlsx")
+    path = os.path.join(
+        os.path.expanduser("~"), "Desktop", f"Cruce_REDLES-{fechaexcel}"
+    )
+    file_name = QtWidgets.QFileDialog.getSaveFileName(
+        ui.tabMain, "Save file", path, ".xlsx"
+    )
     if file_name[0]:
-        writer = pd.ExcelWriter(file_name[0] + file_name[1],
-                                engine="xlsxwriter")
+        writer = pd.ExcelWriter(file_name[0] + file_name[1], engine="xlsxwriter")
         df.to_excel(writer, sheet_name="Estado", encoding="unicode")
         writer.save()
         log(ui)

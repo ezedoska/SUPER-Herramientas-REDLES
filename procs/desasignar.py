@@ -30,9 +30,10 @@ def Desasignado(ui):
             return logB(
                 ui,
                 f"Verifique nro de formulario, expediente, tipo de exp, y tipo de efector .",
-                3, 1)
+                3,
+                1,
+            )
         log(ui)
-        return logB(ui, f"Se desasigno correctamente E:{exp} del F:{form}.", 1,
-                    0)
+        return logB(ui, f"Se desasigno correctamente E:{exp} del F:{form}.", 1, 0)
     except Exception as e:
         return logB(ui, f"Error desasignando el formulario: {str(e)}", 3)
