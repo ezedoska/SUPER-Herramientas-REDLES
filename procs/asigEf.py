@@ -88,3 +88,25 @@ def Asignado_Efectores(ui):
         QtWidgets.QHeaderView.ResizeToContents
     )
     return logB(ui, f"El asignado termino con errores.", 1)
+
+
+def AsigCP(ui):
+    form = ui.CPForm.text()
+    exp = ui.CPExp.text()
+    tipo = io.CPTipo.text()
+    caja = ui.CPCaja.text()
+    dep = ui.CPDepExp.currentText()
+    dict = {"Cooperativa": 2, "Proyecto": 4}
+    try:
+        with engine.begin() as connection:
+            connection.execute(
+                f"""exec [SQLemore].[SHR_AsigexpCOOP-PP]
+                @form={form},
+                @exp={exp},
+                @tipo={dict[tipo]}
+                @caja={caja},
+                @dep='{dep}'"""
+            )
+        return logB(ui, f"El COOP/PP se asigno correctamente.", 1)
+    except Exception as e:
+        return logB(ui, f"Hubo un error: {str(e)}", 3)

@@ -45,7 +45,7 @@ def Cermi_Subida(ui):
 
     try:
         with engine.begin() as connection:
-            connection.execute(f"""EXEC  proc_InsCermi""")
+            connection.execute(f"""EXEC  [SQLemore].[SHR_InsCermi]  """)
     except Exception as e:
         return logB(ui, f"Hubo un error en la carga CERMI: {str(e)}", 3)
     log(ui)

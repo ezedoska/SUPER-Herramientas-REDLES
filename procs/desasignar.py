@@ -7,33 +7,34 @@ def Desasignado(ui):
     form = ui.desaForm.text()
     tipoExp = ui.desaTipoExp.currentText()
     exp = ui.desaExp.text()
-    teDict = {"Persona": 1, "Asociado": 3, "Integrante": 5}
-
+    efDict = {
+        "Persona": 1,
+        "Cooperativa": 2,
+        "Asociado": 3,
+        "Proyecto": 4,
+        "Integrante": 5,
+    }
+    expDict = {
+        "GDE": 1,
+        "SISEX": 2,
+    }
+    # Validamos los casilleros
     if form in ["", "0"]:
         return logB(ui, f"El campo FORMULARIO no peude estar vacio.", 3)
     if exp in ["", "0"] or len(exp) < 11:
         return logB(ui, f"Campo EXPEDIENTE son al menos 12 digitos.", 3)
-
-    delete1 = f"""DELETE 
-                  FROM {tipoForm}sExp{tipoExp}
-                  WHERE id_{tipoForm} = {form} and nroExpediente= {exp} """
-    delete2 = f"""DELETE 
-                  FROM cajasArchivo
-                  WHERE nroRedles = {form} 
-                  and nroExpediente= {exp} 
-                  and tipoRedles={teDict[tipoForm]}"""
+    # Ejecutamos el store
     try:
         with engine.begin() as connection:
-            result1 = connection.execute(delete1)
-            result2 = connection.execute(delete2)
-        if result2.rowcount == 0 and result1.rowcount == 0:
-            return logB(
-                ui,
-                f"Verifique nro de formulario, expediente, tipo de exp, y tipo de efector .",
-                3,
-                1,
+            connection.execute(
+                f"""EXEC [SQLemore].[SHR_Desasignar]   
+                @form={form},
+                @tipoform={efDict[tipoForm]},
+                @exp={exp},
+                @tipoexp={expDict[tipoExp]}"""
             )
-        log(ui)
-        return logB(ui, f"Se desasigno correctamente E:{exp} del F:{form}.", 1, 0)
     except Exception as e:
-        return logB(ui, f"Error desasignando el formulario: {str(e)}", 3)
+        return logB(ui, f"Error desasignando: {str(e)}", 3, 0)
+    # logueamos y terminamos
+    log(ui)
+    return logB(ui, f"Se desasigno correctamente E:{exp} del F:{form}.", 1, 0)

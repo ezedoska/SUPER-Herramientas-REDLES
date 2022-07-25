@@ -89,22 +89,3 @@ def Int(ui):
         return logB(ui, f"El IPP se cargo correctamente.", 1)
     except Exception as e:
         return logB(ui, f"Hubo un error: {str(e)}", 3)
-
-
-def AsigPP(ui):
-    form = ui.PPForm.text()
-    exp = ui.PPExp.text()
-    caja = ui.PPCaja.text()
-    dep = ui.PPDepExp.currentText()
-    try:
-        with engine.begin() as connection:
-            connection.execute(
-                f"""exec [dbo].[asignarexpPP]
-                @form={form},
-                @exp={exp},
-                @caja={caja},
-                @dep='{dep}'"""
-            )
-        return logB(ui, f"El PP se asigno correctamente.", 1)
-    except Exception as e:
-        return logB(ui, f"Hubo un error: {str(e)}", 3)

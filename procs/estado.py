@@ -76,3 +76,14 @@ def Paquetes(ui):
     )
     logB(ui, mensaje)
     return 0
+
+
+def Periodos(ui):
+    ndoc = ui.periodosID.text()
+    script = f"""SELECT *
+               FROM ansesunion
+               WHERE [Nro. documento]={ndoc}
+                """
+    periodos = pd.read_sql_query(script, con=engine)
+    MostrarEnTabla(periodos, ui.periodosTabla)
+    return 0

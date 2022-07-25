@@ -56,7 +56,7 @@ def Asignar_Resolucion(ui):
     try:
         with engine.begin() as connection:
             connection.execute(
-                f"""EXEC AsignarResoEXE 
+                f"""EXEC [SQLemore].[SHR_AsignarResoEXE]   
                     @reso={reso}{anioreso},
                     @exp={exp},
                     @fechareso='{fechaReso}',
