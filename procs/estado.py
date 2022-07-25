@@ -80,7 +80,17 @@ def Paquetes(ui):
 
 def Periodos(ui):
     ndoc = ui.periodosID.text()
-    script = f"""SELECT *
+    script = f"""SELECT 
+                 [TipoEfector]
+                ,[FechaP5]
+                ,[fecha_baja]
+                ,[Nro Formulario]
+                ,[Tipo Documento]
+                ,[CUIT]
+                ,[Apellido]
+                ,[nombres]
+                ,[sexo]
+                ,[Fecha Nacimiento]
                FROM ansesunion
                WHERE [Nro. documento]={ndoc}
                 """

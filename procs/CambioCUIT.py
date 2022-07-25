@@ -42,7 +42,7 @@ def Subir_Cambio_CUIT(ui):
                         ,{form}
                         ,{cuitV}
                         ,{cuitN}
-                        ,'1252'
+                        ,'CC'
                         ,getdate())
                 """
             )
