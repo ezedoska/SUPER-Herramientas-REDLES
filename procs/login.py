@@ -70,7 +70,7 @@ def Login(ui, version, MainWindow):
     #     )
     computer = os.environ["COMPUTERNAME"]
 
-    if "VDM" or "vdm" in computer:
+    if "vdm" in computer.lower():
         Ip = "192.168.1.40,21433"
     else:
         # Ip = "localhost,21433"
@@ -85,7 +85,6 @@ def Login(ui, version, MainWindow):
             con=engine,
         )
     except Exception as e:
-
         return logB(ui, f"Error leyendo version en la base{Ip}: {str(e)}", 3)
     if versionEXE["ultimaversion"].iloc[0] != version:
         alert = QtWidgets.QMessageBox()
@@ -98,8 +97,8 @@ def Login(ui, version, MainWindow):
     try:
         usrLog = pd.read_sql_query(
             f"""SELECT nombres,observaciones
-                                         FROM operadores
-                                         WHERE ndocumento={usr} and palabraclave='{pwd}'""",
+                FROM operadores
+                WHERE ndocumento={usr} and palabraclave='{pwd}'""",
             con=engine,
         )
     except:

@@ -34,6 +34,8 @@ def Desasignado(ui):
                 @tipoexp={expDict[tipoExp]}"""
             )
     except Exception as e:
+        if "El expediente GDE no existe" in str(e):
+            return logB(ui, f"El expediente GDE '{exp}' no existe", 3)
         return logB(ui, f"Error desasignando: {str(e)}", 3, 0)
     # logueamos y terminamos
     log(ui)

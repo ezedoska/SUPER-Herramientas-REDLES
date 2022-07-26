@@ -58,7 +58,7 @@ if __name__ == "__main__":
     )
 
     MainWindow.show()
-    ui.mainGroup.setEnabled(False)
+    ui.mainGroup.setEnabled(True)
     MainWindow.setWindowIcon(QtGui.QIcon("icon.ico"))
     ui.Main.setPixmap(QtGui.QPixmap("Main.png"))
     pixmap = QtGui.QPixmap("Main.png")

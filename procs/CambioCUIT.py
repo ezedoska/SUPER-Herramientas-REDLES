@@ -6,7 +6,6 @@ from procs.db import engine
 def Subir_Cambio_CUIT(ui):
     """
     [Subir Cambio CUIT]
-
     Arguments:
         engine {[sqlalchemy]} -- [engine creado por sqlalchemy]
         f {[figlet]} -- [toma el tipo de letra para marquee]
@@ -22,10 +21,10 @@ def Subir_Cambio_CUIT(ui):
     }
     if form in ["", "0"]:
         return logB(ui, "El campo FORMULARIO no peude estar vacio.", 3)
-    if cuitN in ["", "0"]:
-        return logB(ui, "El campo CUIT NUEVO no peude estar vacio.", 3)
-    if cuitV in ["", "0"]:
-        return logB(ui, "El campo CUIT VIEJO no peude estar vacio.", 3)
+    if cuitN in ["", "0"] or len(cuitN) != 11:
+        return logB(ui, "El campo CUIT NUEVO debe tener 11 digitos.", 3)
+    if cuitV in ["", "0"] or len(cuitV) != 11:
+        return logB(ui, "El campo CUIT VIEJO debe tener 11 digitos.", 3)
 
     try:
         with engine.begin() as connection:

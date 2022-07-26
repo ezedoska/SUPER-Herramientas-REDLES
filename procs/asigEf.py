@@ -93,17 +93,24 @@ def Asignado_Efectores(ui):
 def AsigCP(ui):
     form = ui.CPForm.text()
     exp = ui.CPExp.text()
-    tipo = io.CPTipo.text()
+    tipo = ui.CPTipo.currentText()
     caja = ui.CPCaja.text()
     dep = ui.CPDepExp.currentText()
     dict = {"Cooperativa": 2, "Proyecto": 4}
+    if form in ["", " ", "0"]:
+        return logB(ui, "El campo FORMULARIO no peude estar vacio.", 3)
+    if caja in ["", " "]:
+        return logB(ui, "El campo CAJA no peude estar vacio.", 3)
+    if exp in ["", "0"] or len(exp) < 11:
+        return logB(ui, "El campo EXP debe tener al menos 12 digitos.", 3)
+
     try:
         with engine.begin() as connection:
             connection.execute(
                 f"""exec [SQLemore].[SHR_AsigexpCOOP-PP]
                 @form={form},
                 @exp={exp},
-                @tipo={dict[tipo]}
+                @tipo={dict[tipo]},
                 @caja={caja},
                 @dep='{dep}'"""
             )

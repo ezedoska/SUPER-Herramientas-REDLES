@@ -775,7 +775,7 @@ p, li { white-space: pre-wrap; }
                <item row="0" column="0">
                 <widget class="QTabWidget" name="tabWidget_3">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <widget class="QWidget" name="tab_10">
                   <attribute name="title">
@@ -906,7 +906,7 @@ p, li { white-space: pre-wrap; }
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QComboBox" name="CPtipo">
+                    <widget class="QComboBox" name="CPTipo">
                      <item>
                       <property name="text">
                        <string>Cooperativa</string>
@@ -2054,6 +2054,119 @@ p, li { white-space: pre-wrap; }
                    <string>Integrante</string>
                   </property>
                  </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_12">
+              <attribute name="title">
+               <string>Cambio Cuit</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_14">
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_13">
+                 <property name="title">
+                  <string>CAMBIO CUIT</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_30">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="quoteLabel_2">
+                    <property name="text">
+                     <string>El mejor momento de insertar este cambio es antes de un paquete 4.</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_39">
+                 <property name="text">
+                  <string>Tipo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="ccForm">
+                 <item>
+                  <property name="text">
+                   <string>Persona</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Asociado</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Integrante</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_41">
+                 <property name="text">
+                  <string>Formulario</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="ccTipo">
+                 <property name="inputMask">
+                  <string>99999999</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Formulario</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_42">
+                 <property name="text">
+                  <string>Cuit Viejo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="ccViejo">
+                 <property name="inputMask">
+                  <string>99999999999</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="placeholderText">
+                  <string>El CUIT que se va a cambiar</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_43">
+                 <property name="text">
+                  <string>Cuit nuevo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="ccNuevo">
+                 <property name="placeholderText">
+                  <string>El CUIT nuevo a asignar</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QPushButton" name="ccBoton">
+                 <property name="text">
+                  <string>Subir CUIT nuevo para cruces</string>
+                 </property>
                 </widget>
                </item>
               </layout>
