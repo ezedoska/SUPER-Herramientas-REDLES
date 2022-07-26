@@ -1,2 +1,2 @@
-powershell -Command "& {pyinstaller run.spec}"
+powershell -Command "& {pyinstaller run.spec --noconfirm}"
 pause 
