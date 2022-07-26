@@ -39,8 +39,8 @@ def Subir_Cambio_CUIT(ui):
                     VALUES
                         ({tipoDict[tipo]}
                         ,{form}
-                        ,{cuitV}
-                        ,{cuitN}
+                        ,'{cuitV}'
+                        ,'{cuitN}'
                         ,'CC'
                         ,getdate())
                 """

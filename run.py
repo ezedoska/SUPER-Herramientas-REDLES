@@ -25,6 +25,7 @@ from procs import (
     cermi,
     PP,
     ForzarP3,
+    CambioCUIT,
 )
 from rich.traceback import install
 
@@ -64,7 +65,7 @@ if __name__ == "__main__":
     pixmap = QtGui.QPixmap("Main.png")
     pixmap2 = pixmap.scaledToWidth(16)
     pixmap3 = pixmap.scaledToHeight(16)
-    version = "2.20220520"
+    version = "2.20220726"
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))
@@ -91,6 +92,7 @@ if __name__ == "__main__":
     ui.FP3Boton.clicked.connect(lambda: ForzarP3.Forzar_p3(ui))
     ui.PPInt.clicked.connect(lambda: PP.Int(ui))
     ui.PPAnexo.clicked.connect(lambda: PP.Anexo(ui))
+    ui.ccBoton.clicked.connect(lambda: CambioCUIT.Subir_Cambio_CUIT(ui))
 
     # ui.PPanexo.clicked.connect(lambda: PP.Anexo(ui))
     # ui.PPint.clicked.connect(lambda: PP.Int(ui))

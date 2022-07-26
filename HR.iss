@@ -23,9 +23,9 @@ DisableDirPage=yes
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\emore\Desktop
+OutputDir={#GetEnv('USERPROFILE')}\Desktop
 OutputBaseFilename=SuperHerramientasREDLES
-SetupIconFile=C:\Users\emore\Desktop\super-herramientas-redles\icon.ico
+SetupIconFile={#SourcePath}\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -38,8 +38,8 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\SHR\HerramientasRedles.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\emore\Desktop\super-herramientas-redles\dist\SHR\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#SourcePath}\dist\SHR\HerramientasRedles.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#SourcePath}\dist\SHR\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
