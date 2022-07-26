@@ -1,0 +1,63 @@
+CODIGOS NEGATIVO:
+	1	Relacion de dependencia
+	2	Empleador
+	3	Servicio Domestico
+	4	Mas de una propiedad Inmueble
+	5	Mas de una propiedad Mueble
+	6	No cumple condiciones por AFIP
+	7	En Empleo Formal
+	8	Por el tipo de Actividad
+	9	Accionistas personas Juridicas
+	10	Jubilaciones Especiales
+	11	Retiros Especiales
+	12	Otros Motivos
+
+CAIDOS 2.0:
+F1252 - Asignación de C.U.I.T.
+Códigos de rechazo
+Cód Detalle
+01 CUIT Contribuyente presentante invalido
+02 Formulario presentado incorrecto
+03 Versión del Formulario no vigente
+04 Falta indicar fecha del Lote o la fecha indicada es incorrecta
+10 Falta ingresar la Clave REDLES
+11 Verificar tipo de documento. Falta ingresar el dato o es incorrecto
+12 Verificar Nº de documento
+13 El documento declarado corresponde a una Clave inactiva
+14 Fallecimiento según ANSeS ó RENAPER
+15 El "Tipo de Residencia" indicada no es válido o falta
+16 Falta fecha vencimiento del CERIM - Certificado de Migración
+17 La fecha del Certificado de Migración esta vencida o próxima a vencer
+18 Verificar Sexo
+19 Difiere o falta fecha de nacimiento
+20 Falta ingresar el Email o el ingresado es incorrecto
+21 Falta indicar el tipo de Email informado
+22 Verificar Nombre y Apellido
+23 Falta o difiere el país de origen. En el caso de ser "Naturalizado" deberá indicar el paso de nacimiento
+24 Error en Código de Actividad declarado
+25 El código de activada solicitado no es valido para un M.S.
+26 Domicilio Fiscal incompleto o inconsistente
+27 Falta indicar el Domicilio Legal o es inconsistente
+28 DNI Duplicado
+28 DNI Duplicado
+29 Clave Inactiva
+30 Clave Inactiva - Error en número de DNI
+31 El Contribuyente cuneta con un "Beneficio" vinculado a la Actividad vigente y la declarada es incompatible con este. Para modificar la "Actividad" deberá requerir al baja del "Beneficio" (Baja Caracterización)
+32 El Contribuyente cuenta con una "activada" declara con fecha posteriori a la que desea dar de alta la nueva "Actividad" o la misma se encuentra de “baja” en el misma “Periodo”.
+40 El dato ingresado no es valido
+50 Domicilio fiscal Incompleto - Verificar Nº documento
+51 Verificar Nombre y Apellido - Nº de documento
+52 Verificar Nombre y Apellido - Nº de documento - Domicilio Fiscal Incompleto
+53 Verificar Nombre y Apellido - Nº de documento - País de origen
+54 Verificar Nombre y Apellido - Nº de documento - País de origen - Domicilio Fiscal Incompleto
+55 Retenido. Se envió a Verificar Nº en documento RENAPER
+56 Domicilio Fiscal Incompleto - País de origen
+57 Vino con DNI extranjero pero esta nacionalizado
+58 Esta registrado en nuestra base de dato como Argentino con DNI
+59 Debe concurrir a la Agencia para confirmar domicilio Fiscal
+60 Debe concurrir a la Agencia para regularizar domicilio Fiscal
+61 Debe concurrir a la Agencia afín para regularizar su situación de revista
+62 Reenviar
+98 Error a verificar
+99 Resto - A verificar por AFIP
+
