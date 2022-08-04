@@ -26,7 +26,7 @@ def Cermi_Subida(ui):
         ],
     )
 
-    console.log("Locals", log_locals=True)
+    # console.log("Locals", log_locals=True)
     if df.empty:
         return logB(
             ui,

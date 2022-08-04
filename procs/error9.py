@@ -17,7 +17,7 @@ def Error_9(ui):
             con=engine,
         )
         if checkE9.empty:
-            return logB(ui, f"[{form}] El formulario no tiene error 9.", 2)
+            return logB(ui, f"[{form}] El formulario no tiene error 9/3.", 2)
         else:
             with engine.begin() as connection:
                 try:
@@ -36,7 +36,7 @@ def Error_9(ui):
                     connection.execute(
                         f"""DELETE 
                             FROM {tipo}s_paquete_4 
-                            WHERE id_{tipo}={form} and cod_error=9"""
+                            WHERE id_{tipo}={form} and cod_error in (9,3)"""
                     )
                 except Exception as e:
                     return logB(
