@@ -32,7 +32,7 @@ def Subir_Excel_Asignacion(ui):
         return logB(ui, "Hay mas de un n° de caja en la columna Caja", 2)
 
     exp = int(df.iloc[0, 2])
-    console.log("Locals", log_locals=True)
+    # console.log("Locals", log_locals=True)
     try:
         with engine.begin() as connection:
             connection.execute("DELETE FROM Asignacion")
@@ -55,7 +55,7 @@ def Asignado_Efectores(ui):
 
     tipo = tipoasignacion[0] + tipoasignacion[1]
     tipoexp = tipoasignacion[2]
-    console.log("Locals", log_locals=True)
+    # console.log("Locals", log_locals=True)
     try:
         with engine.begin() as connection:
             connection.execute(
