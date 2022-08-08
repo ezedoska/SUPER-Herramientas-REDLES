@@ -284,7 +284,7 @@ p, li { white-space: pre-wrap; }
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>5</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -2292,6 +2292,49 @@ p, li { white-space: pre-wrap; }
                </item>
               </layout>
              </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_13">
+          <attribute name="title">
+           <string>Stats</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_34">
+           <item row="0" column="1">
+            <widget class="QPushButton" name="statsVerBoton">
+             <property name="text">
+              <string>Ver</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QTableWidget" name="statsTable"/>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QPushButton" name="statsCopyBoton">
+             <property name="text">
+              <string>Copiar tabla</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QComboBox" name="statsBox">
+             <item>
+              <property name="text">
+               <string>Altas por año/mes</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bajas por año/mes</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Stats por provincia</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>
