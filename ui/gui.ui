@@ -284,7 +284,7 @@ p, li { white-space: pre-wrap; }
           <enum>QTabWidget::North</enum>
          </property>
          <property name="currentIndex">
-          <number>5</number>
+          <number>0</number>
          </property>
          <property name="usesScrollButtons">
           <bool>false</bool>
@@ -576,10 +576,27 @@ p, li { white-space: pre-wrap; }
                         </property>
                        </widget>
                       </item>
-                      <item row="2" column="0" colspan="2">
+                      <item row="4" column="0" colspan="2">
                        <widget class="QPushButton" name="MCBoton">
                         <property name="text">
                          <string>Modificar</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_44">
+                        <property name="text">
+                         <string>Fecha:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QLineEdit" name="MCFecha">
+                        <property name="inputMask">
+                         <string>99999999</string>
+                        </property>
+                        <property name="placeholderText">
+                         <string>AAAAMMDD</string>
                         </property>
                        </widget>
                       </item>

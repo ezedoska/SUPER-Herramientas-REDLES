@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Super Herramientas REDLES"
-#define MyAppVersion "2.20220520"
+#define MyAppVersion "2.20221011"
 #define MyAppPublisher "Doskapps"
 #define MyAppURL "https://registroefectores.desarrollosocial.gob.ar"
 #define MyAppExeName "HerramientasRedles.exe"

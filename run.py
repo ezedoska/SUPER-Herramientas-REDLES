@@ -26,6 +26,7 @@ from procs import (
     PP,
     ForzarP3,
     CambioCUIT,
+    Stats,
 )
 from rich.traceback import install
 
@@ -65,7 +66,7 @@ if __name__ == "__main__":
     pixmap = QtGui.QPixmap("Main.png")
     pixmap2 = pixmap.scaledToWidth(16)
     pixmap3 = pixmap.scaledToHeight(16)
-    version = "2.20220727"
+    version = "2.20221011"
     MainWindow.setWindowTitle(f"[ SUPER Herramientas REDLES - v.{version} ]")
 
     ui.quoteLabel.setText(random.choice(redlestips))
@@ -86,6 +87,7 @@ if __name__ == "__main__":
     ui.desaBoton.clicked.connect(lambda: desasignar.Desasignado(ui))
     ui.cermiBoton.clicked.connect(lambda: cermi.Cermi_Subida(ui))
     ui.crucePrecariosBoton.clicked.connect(lambda: cermi.Cermi_Listado(ui))
+    ui.MCBoton.clicked.connect(lambda: cermi.Cermi_mod(ui))
     ui.estadoBoton.clicked.connect(lambda: estado.Estado(ui))
     ui.periodosBoton.clicked.connect(lambda: estado.Periodos(ui))
     ui.paquetesBoton.clicked.connect(lambda: estado.Paquetes(ui))
@@ -93,6 +95,8 @@ if __name__ == "__main__":
     ui.PPInt.clicked.connect(lambda: PP.Int(ui))
     ui.PPAnexo.clicked.connect(lambda: PP.Anexo(ui))
     ui.ccBoton.clicked.connect(lambda: CambioCUIT.Subir_Cambio_CUIT(ui))
+    ui.statsVerBoton.clicked.connect(lambda: Stats.get_stats(ui))
+    ui.statsCopyBoton.clicked.connect(lambda: logger.copiar_tabla(ui.statsTable))
 
     # ui.PPanexo.clicked.connect(lambda: PP.Anexo(ui))
     # ui.PPint.clicked.connect(lambda: PP.Int(ui))

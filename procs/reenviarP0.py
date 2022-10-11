@@ -36,6 +36,7 @@ def Reenviar_P0(ui):
             return logB(
                 ui, f"[{form}] Ocurrio un error al borrar el paquete 0: {str(e)}", 3
             )
+        log(ui, form)
         return logB(ui, f"[{form}] Se borro el paquete 0.", 1)
     except Exception as e:
         return logB(ui, f"[{form}] Ocurrio un error chequeando estado: {str(e)}", 3)

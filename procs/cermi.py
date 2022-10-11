@@ -26,7 +26,6 @@ def Cermi_Subida(ui):
         ],
     )
 
-    # console.log("Locals", log_locals=True)
     if df.empty:
         return logB(
             ui,
@@ -94,6 +93,7 @@ def Cermi_Listado(ui):
 def Cermi_mod(ui):
     form = ui.MCForm.text()
     cermi = ui.MCCermi.text()
+    fecha = ui.MCFecha.text()
     if form in ["", "0"]:
         return logB(ui, f"El campo FORMULARIO no peude estar vacio.", 3)
     if cermi in ["", "0"]:
@@ -103,7 +103,14 @@ def Cermi_mod(ui):
         with engine.begin() as connection:
             connection.execute(
                 f"""UPDATE DatosExtranjeros
-                                    SET nromigracion={cermi}
+                                    SET nromigracion={cermi},
+                                        vencimientoCermi={fecha}
+                                    where nroformulario={form}
+                                    """
+            )
+            connection.execute(
+                f"""UPDATE personas11
+                                    SET id_tipo_documento=30
                                     where nroformulario={form}"""
             )
         log(ui)
