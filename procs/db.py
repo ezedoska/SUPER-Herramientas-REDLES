@@ -15,7 +15,7 @@ else:
 server = (
     r"Driver={SQL Server};"
     + f"Server={Ip};"
-    + f"Database=adm_efectores;UID=sqlemore;PWD=Eze2kftw!;"
+    + f"Database=falso;UID=falso;PWD=falso!;"
 )
 # parseamos para que lo pueda leer bien sqlalchemy
 urlserver = urllib.parse.quote_plus(server)
