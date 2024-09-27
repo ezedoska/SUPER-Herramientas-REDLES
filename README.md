@@ -1,5 +1,3 @@
 # super herramientas redles
-
-Werkzeug==0.16.1
-sqlalchemy==1.3.5
-pandas==1.3.5
+App para varios procesos que impactan en la base de efectores.
+Requiere LOGIN con la base de datos del Registro de Efectores.
